@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>java8的写法 | My Home</title>
+<link rel="shortcut icon" href="/Users/zhangnan12/Documents/Gridea/output/favicon.ico?v=1560654873670">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="/Users/zhangnan12/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/zhangnan12/Documents/Gridea/output">
+  <img class="avatar" src="/Users/zhangnan12/Documents/Gridea/output/images/avatar.png?v=1560654873670" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output//index.html" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/archives/index.html" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/tags/index.html" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/post/about/index.html" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              java8的写法
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-06-06 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <h1 id="java8-的写法">java8 的写法</h1>
+<h2 id="lambda表达式">lambda表达式</h2>
+<pre><code>String[] atp = {&quot;Rafael Nadal&quot;, &quot;Novak Djokovic&quot;,
+                &quot;Stanislas Wawrinka&quot;,
+                &quot;David Ferrer&quot;,&quot;Roger Federer&quot;,
+                &quot;Andy Murray&quot;,&quot;Tomas Berdych&quot;,
+                &quot;Juan Martin Del Potro&quot;};
+List&lt;String&gt; players =  Arrays.asList(atp);
+
+// 以前的循环方式
+for (String player : players) {
+    System.out.print(player + &quot;; &quot;);
+}
+
+// 使用 lambda 表达式以及函数操作(functional operation)
+//        参数 + 表达式
+players.forEach((player) -&gt; System.out.print(player + &quot;; &quot;));
+// 在 Java 8 中使用双冒号操作符(double colon operator)
+players.forEach(System.out::println);
+</code></pre>
+<h2 id="循环">循环</h2>
+<pre><code>  List&lt;RapServicecatalog&gt; rapServicecatalogList = rapServicecatalogMapper.selectByExample(rapServicecatalogExample);
+        List&lt;TreeNode&gt; treeNodeList =   new ArrayList&lt;&gt; () ;
+
+        rapServicecatalogList.forEach(servicecatalog  -&gt;{
+            TreeNode temp=   new TreeNode();
+            temp.setId(servicecatalog.getId());
+            temp.setLabel(servicecatalog.getName());
+            treeNodeList.add(temp);
+        });
+</code></pre>
+<h2 id="泛型">泛型</h2>
+<p>Java泛型中的标记符含义：</p>
+<p>E - Element (在集合中使用，因为集合中存放的是元素)</p>
+<p>T - Type（Java 类）</p>
+<p>K - Key（键）</p>
+<p>V - Value（值）</p>
+<p>N - Number（数值类型）</p>
+<p>？ -  表示不确定的java类型</p>
+<p>S、U、V  - 2nd、3rd、4th types</p>
+<p>Object跟这些标记符代表的java类型有啥区别呢？</p>
+<p>Object是所有类的根类，任何类的对象都可以设置给该Object引用变量，使用的时候可能需要类型强制转换，但是用使用了泛型T、E等这些标识符后，在实际用之前类型就已经确定了，不需要再进行类型强制转换。</p>
+<h2 id="函数式编程">函数式编程</h2>
+<h2 id="serializable序列化接口">Serializable序列化接口</h2>
+<p>private static final long serialVersionUID = 1L;
+作为一个标识，让jvm来帮助对类进行序列化；</p>
+<p>序列化之后，可以进行传输和存储；
+一般 entity 实体；和 vo 前端传给后端需要序列化；</p>
+<p>技巧：可以在基础类，父类上implement serializable ；
+子类就不需要重复实现啦；</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="/Users/zhangnan12/Documents/Gridea/output/post/change-boke/index.html">
+              <h3 class="post-title">
+                博客从hexo切换到gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

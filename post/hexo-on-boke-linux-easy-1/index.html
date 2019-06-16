@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之命令篇(1) | My Home</title>
+<link rel="shortcut icon" href="/Users/zhangnan12/Documents/Gridea/output/favicon.ico?v=1560654873670">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="/Users/zhangnan12/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/zhangnan12/Documents/Gridea/output">
+  <img class="avatar" src="/Users/zhangnan12/Documents/Gridea/output/images/avatar.png?v=1560654873670" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output//index.html" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/archives/index.html" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/tags/index.html" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/post/about/index.html" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之命令篇(1)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="/Users/zhangnan12/Documents/Gridea/output/tag/dpOd2SwZ5/index.html" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>在linux盛行的今天，不会linux命令何以立足。那么，我们拿到一个linux服务器资源，通过哪些命令来了解该服务器的基本情况呢？</p>
+<p>硬件资源</p>
+<p>**  cpu、内存   可以访问/proc目录**<br>
+cat /proc/cpuinfo # 查看CPU信息 个数、处理器速度
+cat /proc/meminfo # 查看内存信息 内存大小
+**  磁盘、分区  **<br>
+mount | column -t # 查看挂接的分区状态　　
+fdisk -l # 查看所有分区　
+##软件资源</p>
+<p>**  操作系统**<br>
+uname -a # 查看内核/操作系统/CPU信息
+cat /etc/issue # 查看操作系统版本
+cat /proc/version # 查看操作系统版本
+hostname # 查看计算机名　　
+lsmod # 列出加载的内核模块　　
+env # 查看环境变量　
+**  系统资源  **<br>
+top # 看cpu的相关信息
+free -h # 显示内存的情况 内存和交换区使用量　　
+grep MemTotal /proc/meminfo # 查看内存总量
+grep MemFree /proc/meminfo # 查看空闲内存量　
+vmstat # CPU、内存、IO的情况，详细参数可参考Linux vmstat命令实战详解
+uptime # 开机多久 几个人用 负载（load average）是多少
+cat /proc/loadavg # 查看系统负载
+df -h # 查看各分区使用情况　　
+du -sh # 查看指定目录的大小　　
+du 默认是循环列出所有的目录和文件的大小
+du -h -d  1   /path           -d 1 和  --max-depth=1  功能一样
+du -h --max-depth= 1  /path       能够查看path下的目录大小
+du -h --max-depth= 1  /path/*    能够查看path下所有文件和目录的大小
+mount | column -t # 查看挂接的分区状态　　
+fdisk -l # 查看所有分区　
+load average 的含义：三个值分别指系统在最后 1/5/15分钟的平均负载。
+根据经验：我们应该把重点放在5/15分钟的平均负载，因为1分钟的平均负载太频繁，一瞬间的高并发就会导致该值的大幅度改变。</p>
+<p>**  网络  **  　
+ifconfig # 查看所有网络接口的属性　　
+iptables -L # 查看防火墙设置　　
+route -n # 查看路由表　　
+netstat -lntp # 查看所有监听端口　　
+netstat -antp # 查看所有已经建立的连接　　
+netstat -s # 查看网络统计信息
+**  进程  **  　　　
+ps -ef # 查看所有进程　　
+top # 实时显示进程状态
+crontab - l # 查看自动任务
+crobtab -e # 编写自动任务
+**  用户  **
+w # 查看活动用户　　
+id # 查看指定用户信息　　
+last # 查看用户登录日志　　
+cut -d : -f 1 /etc/passwd # 查看系统所有用户　　
+cut -d : -f 1 /etc/group # 查看系统所有组　　
+通过上述命令，是不是对自己的linux的情况有了大致的了解了呢？
+是的话请给个赞吧！</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-vi/index.html">
+              <h3 class="post-title">
+                GVIM的使用指南（VI命令）
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

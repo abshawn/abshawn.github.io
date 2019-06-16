@@ -1,0 +1,230 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之文件打包和压缩(3) | My Home</title>
+<link rel="shortcut icon" href="/Users/zhangnan12/Documents/Gridea/output/favicon.ico?v=1560654873670">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="/Users/zhangnan12/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/zhangnan12/Documents/Gridea/output">
+  <img class="avatar" src="/Users/zhangnan12/Documents/Gridea/output/images/avatar.png?v=1560654873670" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output//index.html" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/archives/index.html" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/tags/index.html" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/post/about/index.html" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之文件打包和压缩(3)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="/Users/zhangnan12/Documents/Gridea/output/tag/dpOd2SwZ5/index.html" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>文件打包和压缩</p>
+<p>zip</p>
+<p>压缩文件 zip -r -q -o 文件名 路径
+查看文件大小 du -h -d 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+shiyanlou:Code/ $ ls                                                 [16:49:03]
+a  a.sh  a.zip  back.sh  blog
+shiyanlou:Code/ $ zip -r -q -o blog.zip  ~/Code/blog                 [16:49:04]
+shiyanlou:Code/ $ du -h -d 0 ~/Code/blog |sort                       [16:52:46]
+104M	/home/shiyanlou/Code/blog
+shiyanlou:Code/ $ du -h -d 0 ~/Code/* |sort                          [16:53:10]
+104M	/home/shiyanlou/Code/blog
+34M	/home/shiyanlou/Code/blog.zip
+4.0K	/home/shiyanlou/Code/a.sh
+4.0K	/home/shiyanlou/Code/a.zip
+4.0K	/home/shiyanlou/Code/back.sh
+8.0K	/home/shiyanlou/Code/a
+shiyanlou:Code/ $
+当前路径 : ./</p>
+<p>upzip</p>
+<p>不解压 查看文件内容
+1
+2
+3
+4
+5
+6
+7
+shiyanlou:Code/ $ unzip -l a.zip                                     [16:46:17]
+Archive:  a.zip
+Length      Date    Time    Name</p>
+<hr>
+<pre><code>   84  2016-07-05 17:02   a.sh
+</code></pre>
+<hr>
+<pre><code>   84                     1 file
+</code></pre>
+<p>解压zip文件 到当前目录
+1
+2
+3
+4
+5
+shiyanlou:Code/ $ ls                                                 [17:00:53]
+a.sh  a.zip  back.sh  blog  blog.zip
+shiyanlou:Code/ $ unzip a.zip -d  a                                  [17:00:54]
+Archive:  a.zip
+inflating: a/a.sh
+tar</p>
+<p>man tar的给出的实例的用法
+tar的实例 打包 ，查看打包后的结果
+tar 解压缩 到创建的临时文件目录上
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+shiyanlou:~/ $ man tar |grep -A 7 EXAMPLES[9:51:34]
+EXAMPLES
+Create archive.tar from files foo and bar.
+tar -cf archive.tar foo bar
+List all files in archive.tar verbosely.
+tar -tvf archive.tar
+Extract all files from archive.tar.
+tar -xf archive.tar
+shiyanlou:~/ $ ls       [9:52:12]
+Code  Desktop  mybin  pc5s  tmp  tmp.tar  tmp.zip  ??????
+shiyanlou:~/ $ tar -zcf tmp.tar.gz ./[9:52:24]
+shiyanlou:~/ $ du -h -d 0 ./*[9:55:11]
+138M./Code
+36K./Desktop
+8.0K./mybin
+4.7M./pc5s
+7.0M./tmp
+5.4M./tmp.tar
+194M./tmp.tar.gz
+3.4M./tmp.zip
+35M./下载
+下面是解压的过程</p>
+<p>交作业</p>
+<p>aafire 火炉实验，多么大的火焰啊，可惜现在是夏天，烤的我好热啊！</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-2/index.html">
+              <h3 class="post-title">
+                linux入门之环境变量与文件查找(2)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

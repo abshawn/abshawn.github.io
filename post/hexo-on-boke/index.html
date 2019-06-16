@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>博客折腾记（HEXO＋Github） | My Home</title>
+<link rel="shortcut icon" href="/Users/zhangnan12/Documents/Gridea/output/favicon.ico?v=1560654873670">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="/Users/zhangnan12/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/zhangnan12/Documents/Gridea/output">
+  <img class="avatar" src="/Users/zhangnan12/Documents/Gridea/output/images/avatar.png?v=1560654873670" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output//index.html" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/archives/index.html" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/tags/index.html" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/post/about/index.html" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              博客折腾记（HEXO＋Github）
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-06-29 ·
+              </time>
+              
+                <a href="/Users/zhangnan12/Documents/Gridea/output/tag/JBFBPe9Le/index.html" class="post-tag">
+                  # 意义
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>闲着就要折腾！</p>
+<p>因为个人在搭建的过程中遇到了一些流程上的问题诸如hexo 和 node的关系，hexo和github的关系等，所以该文主要是讲解一下搭建博客的整个流程，为后来者提供一下经验，仅供参考！</p>
+<p>首先给出自己的linux环境参数</p>
+<p>ubuntu: 14.04 ( cat /etc/issue )
+linux version: 3.13.0-generic ( cat
+/proc/version )
+linux系统位数：X86_64 ( sudo uname –m )
+hexo 版本: 3.2.0 (hexo -v)
+可以用实验楼的linux资源，个人觉得很方便</p>
+<p>大概分三步完成：</p>
+<ol>
+<li>在linux下安装hexo，通过hexo新建一个博客
+hexo是一款基于Node.js的静态博客框架，讲究的就是快准狠。所以先要安装Node.js，安装过程请参照其他的博客，安装node之后，通过其npm命令安装hexo。然后通过如下两个命令 node -v 和 hexo -v 显示相应的版本信息后，表示 node和hexo安装成功。</li>
+</ol>
+<p>shiyanlou:mysite/ $ node -v [14:49:05]
+v0.10.25
+shiyanlou:mysite/ $ hexo -v [14:57:45]
+hexo: 3.2.0
+hexo-cli: 1.0.2
+os: Linux 3.13.0-30-generic linux x64
+http_parser: 1.0
+node: 0.10.25
+v8: 3.14.5.9
+ares: 1.10.0
+uv: 0.10.23
+zlib: 1.2.8
+modules: 11
+openssl: 1.0.1f
+如果没有安装，可参看本文</p>
+<p>sudo apt-get install nodejs
+sudo apt-get install npm
+sudo npm install -g hexo
+或 sudo npm install hexo-cli -g
+安装hexo之后，就可以通过hexo的几个命令生成一个的轻博客。
+先建一个文件夹，例如 mysite（mysite 就是你的博客根目录），然后进入该目录，执行init命令hexo</p>
+<p>hexo init 初始化命令
+hexo server 启动服务命令</p>
+<p>hexo s
+INFO Hexo is running at http://localhost:4000/mysite/. Press Ctrl+C to stop.</p>
+<p>显示如上说明成功了，可以在浏览器中进行验证 http://localhost:4000/mysite</p>
+<ol start="2">
+<li>
+<p>在github中新建一个github pages的主页
+根据github pages的官方文档英文就可以一步步的建立一个空间（仓库repository），当然可会给你看这个中文的
+用GitHub Pages 快速搭建一个自己的网页
+建完之后发现，就是一个很简单的主页，github会提供一些博客模板但都不是很fashion。这就是为什么上面会先提到hexo。
+这就是你的空间地址： https://yourname.github.io 。</p>
+</li>
+<li>
+<p>在 HEXO中配置github的相关信息
+这一步的目的就是将第一步hexo生成的博客直接发布到第二部github pages空间里。以后就直接通过 markdown的文本编辑器编写博客文章，然后通过hexo发布到github里，最后就可以通过你的空间地址： https://yourname.github.io 进行访问最新的博客内容啦。</p>
+</li>
+</ol>
+<p>这里有详细的hexo中 配置文件的配置_config.yml的修改，以及hexo的发布博客的命令。</p>
+<p>hexo clean
+hexo g
+hexo d
+记录网站诞生过程-使用hexo+github pages</p>
+<p>很多文章提到配置SSH keys，其目的就是通过hexo发布到github里时，是否需要输入密码，因为你频繁发布博客的话，最好是配置相应的SSHkeys，以后就不用输入了。</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

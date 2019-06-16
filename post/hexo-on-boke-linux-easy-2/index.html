@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之环境变量与文件查找(2) | My Home</title>
+<link rel="shortcut icon" href="/Users/zhangnan12/Documents/Gridea/output/favicon.ico?v=1560654873670">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="/Users/zhangnan12/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/zhangnan12/Documents/Gridea/output">
+  <img class="avatar" src="/Users/zhangnan12/Documents/Gridea/output/images/avatar.png?v=1560654873670" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output//index.html" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/archives/index.html" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/tags/index.html" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/post/about/index.html" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之环境变量与文件查找(2)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="/Users/zhangnan12/Documents/Gridea/output/tag/dpOd2SwZ5/index.html" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>环境变量</p>
+<p>分类</p>
+<p>当前 Shell 进程私有用户自定义变量，如上面我们创建的 temp 变量，只在当前 Shell 中有效。
+Shell 本身内建的变量。
+从自定义变量导出的环境变量。
+1 declare tmp;
+2 tmp=&quot;shiyanlou i love y&quot;;
+3 echo $tmp ；</p>
+<p>添加自定义路径到“PATH”环境变量</p>
+<p>这个功能很实用，可以将常用的命令放在 home/shiyanlou/mybin 下
+然后，将此路径添加到PATH中</p>
+<p>查询当前的shell：有如下命令
+ps
+echo $0
+echo $SHELL
+env | grep SHELL</p>
+<p>其他命令
+env 或者 export # 查看当前shell环境变量； set 查看所有环境变量
+unset temp_env # 删除temp_env环境变量
+source .zshrc # 使该shell 源文件 即时生效</p>
+<p>文件查找
+whereis
+which
+locate
+find</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-1/index.html">
+              <h3 class="post-title">
+                linux入门之命令篇(1)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

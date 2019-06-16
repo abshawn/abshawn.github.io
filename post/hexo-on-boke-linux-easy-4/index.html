@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之文件系统操作与磁盘管理(4) | My Home</title>
+<link rel="shortcut icon" href="/Users/zhangnan12/Documents/Gridea/output/favicon.ico?v=1560654873670">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="/Users/zhangnan12/Documents/Gridea/output/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="/Users/zhangnan12/Documents/Gridea/output">
+  <img class="avatar" src="/Users/zhangnan12/Documents/Gridea/output/images/avatar.png?v=1560654873670" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output//index.html" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/archives/index.html" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/tags/index.html" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/Users/zhangnan12/Documents/Gridea/output/post/about/index.html" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之文件系统操作与磁盘管理(4)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="/Users/zhangnan12/Documents/Gridea/output/tag/dpOd2SwZ5/index.html" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <p>基本概念</p>
+<p>linux的文件系统，主要包括了linux磁盘分区和目录、挂载基本原理、文件存储结构、常见目录。</p>
+<p>什么是文件系统？</p>
+<p>文件系统是对一个存储设备上的数据和元数据进行组织的机制
+Linux 文件系统体系结构是一个对复杂系统进行抽象化的有趣例子。
+Linux 可以在许多种存储设备上支持许多种文件系统。</p>
+<!-- more -->
+<p>什么是挂装（mount）？</p>
+<p>在Linux中将一个文件系统与一个存储设备关联起来的过程称为挂装。
+使用mount命令将一个文件系统附着到当前文件系统层次结构中（根）。
+在执行挂装时，要提供文件系统类型、文件系统和一个挂装点。
+linux 常见目录</p>
+<p>通过tree命令可以查看，根目录下的所有目录
+实验楼
+linux文件类型</p>
+<p>实验楼</p>
+<p>实验楼环境，使用的就是ext4和 tmpfs 这两种文件类型
+ext4 Ext4的文件系统容量达到1EB，而文件容量则达到16TB
+tmpfs tmpfs是最好的基于内存(RAM)的文件系统，自动调整动态文件系统，速度快
+linux目录和分区的关系</p>
+<p>linux目录和分区的关系</p>
+<p>常见操作</p>
+<ol>
+<li>df、du和fdisk命令</li>
+</ol>
+<p>df 查看分区使用情况 （挂载目录情况和空间使用情况）
+du 查看文件占用空间情况（某目录下所有的文件或目录大小）
+fdisk查看硬盘分区表 （实验楼环境无此命令）
+实验楼</p>
+<ol start="2">
+<li>创建虚拟磁盘</li>
+</ol>
+<p>dd命令 用于转换和复制文件，功能很强大。
+losetup命令 用于设置循环设备loop设备（一种伪设备）</p>
+<p>实例介绍</p>
+<ol>
+<li>创建空的磁盘镜像文件，这里创建一个1.44M的软盘
+$ dd if=/dev/zero of=floppy.img bs=512 count=2880</li>
+<li>使用 losetup将磁盘镜像文件虚拟成快设备
+$ losetup /dev/loop1 floppy.img</li>
+<li>挂载块设备
+$ mount /dev/loop0 /tmp
+以上完成通过/tmp目录像访问真实设备来访问磁盘镜像文件floppy.img。</li>
+<li>卸载loop设备
+$ umount /tmp
+$ losetup -d /dev/loop1
+【因为本实验楼环境没有 /dev/loop1，所以无法完成该实例】</li>
+</ol>
+<p>有条件的同学可尝试下， 参考资料： Linux文件系统剖析</p>
+<p>作业</p>
+<p>cowsay 命令</p>
+<p>可以让你在终端里以一种动物说话的形式打印出一段话。 如下：</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-3/index.html">
+              <h3 class="post-title">
+                linux入门之文件打包和压缩(3)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

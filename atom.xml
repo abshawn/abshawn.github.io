@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>/Users/zhangnan12/Documents/Gridea/output</id>
+    <title>My Home</title>
+    <updated>2019-06-16T03:28:00.108Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="/Users/zhangnan12/Documents/Gridea/output"/>
+    <link rel="self" href="/Users/zhangnan12/Documents/Gridea/output/atom.xml"/>
+    <subtitle>记录我的技术博客之路</subtitle>
+    <logo>/Users/zhangnan12/Documents/Gridea/output/images/avatar.png</logo>
+    <icon>/Users/zhangnan12/Documents/Gridea/output/favicon.ico</icon>
+    <rights>All rights reserved 2019, My Home</rights>
+    <entry>
+        <title type="html"><![CDATA[撰写博客的日志记录]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/log-record/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/log-record/index.html">
+        </link>
+        <updated>2019-06-06T08:08:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>记录每次更新的功能和内容:</p>
+<p>提供工作效率，每周备份一次，每周发版两次。
+每周三、日：将撰写的文字，发布到github。
+每周日：8点到9点，进行备份。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>记录每次更新的功能和内容:</p>
+<p>提供工作效率，每周备份一次，每周发版两次。
+每周三、日：将撰写的文字，发布到github。
+每周日：8点到9点，进行备份。</p>
+<!-- more -->
+<pre><code>	第6次
+
+时间：2019-06-16 10:50
+版本：v-1-1
+功能：迁移hexo博客到g'ridea
+内容：hexo文章挪到新平台后进行同步覆盖github page
+	补充：hexo在实验楼的环境已经没有了
+	
+		第5次
+
+时间：2019-06-16 18:16
+版本：v-1-0
+功能：迁移hexo博客到g'ridea
+内容：hexo文章挪到新平台后进行同步覆盖github page
+	补充：hexo在实验楼的环境已经没有了
+
+第4次
+
+时间：2016-07-17 18:16
+版本：v-7-3
+功能：撰写分类为linux入门的6篇文字
+内容：linux入门
+补充：
+
+第3次
+
+时间：2016-07-06 14:16
+版本：v-7-2
+功能：撰写分类为python的文章，撰写about页面
+内容：
+补充：
+
+第2次
+
+时间：2016-07-05 14:16
+版本：v-7-1
+功能：添加了分类、标签、搜索功能
+内容：new post 格式的更新，补充log更新日志。
+补充：进一步完善，about 个人简介。
+
+第1次
+
+时间：2016-06-30 14:16
+版本：v-6-1
+功能：搭建了该博客平台，撰写了3篇博文
+内容：实验楼linux环境搭建，hexo的安装，github ssh验证。
+补充：
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[java8的写法]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/java8/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/java8/index.html">
+        </link>
+        <updated>2019-06-06T08:08:13.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="java8-的写法">java8 的写法</h1>
+<h2 id="lambda表达式">lambda表达式</h2>
+<pre><code>String[] atp = {&quot;Rafael Nadal&quot;, &quot;Novak Djokovic&quot;,
+                &quot;Stanislas Wawrinka&quot;,
+                &quot;David Ferrer&quot;,&quot;Roger Federer&quot;,
+                &quot;Andy Murray&quot;,&quot;Tomas Berdych&quot;,
+                &quot;Juan Martin Del Potro&quot;};
+List&lt;String&gt; players =  Arrays.asList(atp);
+
+// 以前的循环方式
+for (String player : players) {
+    System.out.print(player + &quot;; &quot;);
+}
+
+// 使用 lambda 表达式以及函数操作(functional operation)
+//        参数 + 表达式
+players.forEach((player) -&gt; System.out.print(player + &quot;; &quot;));
+// 在 Java 8 中使用双冒号操作符(double colon operator)
+players.forEach(System.out::println);
+</code></pre>
+<h2 id="循环">循环</h2>
+<pre><code>  List&lt;RapServicecatalog&gt; rapServicecatalogList = rapServicecatalogMapper.selectByExample(rapServicecatalogExample);
+        List&lt;TreeNode&gt; treeNodeList =   new ArrayList&lt;&gt; () ;
+
+        rapServicecatalogList.forEach(servicecatalog  -&gt;{
+            TreeNode temp=   new TreeNode();
+            temp.setId(servicecatalog.getId());
+            temp.setLabel(servicecatalog.getName());
+            treeNodeList.add(temp);
+        });
+</code></pre>
+<h2 id="泛型">泛型</h2>
+<p>Java泛型中的标记符含义：</p>
+<p>E - Element (在集合中使用，因为集合中存放的是元素)</p>
+<p>T - Type（Java 类）</p>
+<p>K - Key（键）</p>
+<p>V - Value（值）</p>
+<p>N - Number（数值类型）</p>
+<p>？ -  表示不确定的java类型</p>
+<p>S、U、V  - 2nd、3rd、4th types</p>
+<p>Object跟这些标记符代表的java类型有啥区别呢？</p>
+<p>Object是所有类的根类，任何类的对象都可以设置给该Object引用变量，使用的时候可能需要类型强制转换，但是用使用了泛型T、E等这些标识符后，在实际用之前类型就已经确定了，不需要再进行类型强制转换。</p>
+<h2 id="函数式编程">函数式编程</h2>
+<h2 id="serializable序列化接口">Serializable序列化接口</h2>
+<p>private static final long serialVersionUID = 1L;
+作为一个标识，让jvm来帮助对类进行序列化；</p>
+<p>序列化之后，可以进行传输和存储；
+一般 entity 实体；和 vo 前端传给后端需要序列化；</p>
+<p>技巧：可以在基础类，父类上implement serializable ；
+子类就不需要重复实现啦；</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[博客从hexo切换到gridea]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/change-boke/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/change-boke/index.html">
+        </link>
+        <updated>2019-06-06T07:46:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>博客从hexo切换到gridea，更容易编写。
+👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。很适合用来记录我的技术成长之路。目前我也是用本地的markdown来管理自己的技术文档的。切换无成本。一次配置，一键发布共享。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>博客从hexo切换到gridea，更容易编写。
+👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。很适合用来记录我的技术成长之路。目前我也是用本地的markdown来管理自己的技术文档的。切换无成本。一次配置，一键发布共享。</p>
+<!-- more -->
+<p>1、hexo 之前是在github上弄的网络环境，便于随时随地撰写并通过命令行发布到github page上，但同时带来了一些额外的写作的成本。</p>
+<p>2、发现gridea后，全平台兼容，能很好的支持mac端写作，并且一次配置之后，就可以很方便的撰写并发布到github page上啦。与简书的写作方式类似，无切换成本。</p>
+<p>3、界面化的写作模式，更符合人性的特点，更容易促使日更。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux入门之任务计划crontab(5)]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-5/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-5/index.html">
+        </link>
+        <updated>2016-07-17T03:13:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>crontab介绍</p>
+<p>我们时常会有一些定期定时的任务，如周期性的清理一下／tmp，周期性的去备份一次数据库，周期性的分析日志等等。而且有时候因为某些因素的限制，执行该任务的时间会很尴尬。本文同你一起掀开Linux系统自动任务的神秘面纱。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>crontab介绍</p>
+<p>我们时常会有一些定期定时的任务，如周期性的清理一下／tmp，周期性的去备份一次数据库，周期性的分析日志等等。而且有时候因为某些因素的限制，执行该任务的时间会很尴尬。本文同你一起掀开Linux系统自动任务的神秘面纱。</p>
+ <!-- more --> 
+<p>1、基本概念</p>
+<p>crontab自动任务的理解
+用于设置周期性被执行的指令
+该命令读取指令存放于crontab文件中供后续读取和执行
+crond为其守护进程，一般在后台默默运行，不间断的检查是否有预定的作业需要执行。
+crontab命令的格式和参数
+分 时 日 月 星期 &lt;命令&gt; &lt;日志&gt;
+crontab格式和参数.png
+2、环境的准备</p>
+<p>实验楼的linux系统，默认是没有启动日志和cron守护进程，需要手动启动</p>
+<p>启动日志的命令</p>
+<p>service rsyslog start （已启动的可以不起）
+1</p>
+<p>启动crontab</p>
+<p>sudo cron -f &amp;
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</p>
+<pre><code>&gt; * 操作截图如下
+![启动日志和crontab](https://dn-simplecloud.qbox.me/1790261468638161237-wm)
+
+
+&gt; ** crontab 新增任务**
+&gt; * 使用vi编辑器进行编辑，输入i切到编辑模式
+-  ```- crontab -e 
+</code></pre>
+<p><img src="https://dn-simplecloud.qbox.me/1790261468638619229-wm" alt="新增任务计划"></p>
+<blockquote>
+<ul>
+<li>查看结果</li>
+</ul>
+</blockquote>
+<ul>
+<li>没有生成文件？日志报错“no mta installed discarding output”</li>
+</ul>
+<pre><code class="language-sudo">报错日志
+
+查找原因，发现 书写格式有误 ，需在date之后加个空格。
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+*/1 * * * * touch /home/shiyanlou/$(date  +\%Y\%m\%d\%H\%M\%S) 
+</code></pre>
+<p><img src="https://dn-simplecloud.qbox.me/1790261468650326234-wm" alt="已生成20160716142101文件"></p>
+<hr>
+<h2 id="crontab使用"><strong>crontab使用</strong></h2>
+<p>一个是linux系统，是存在多个用户的，那么每个用户建立的crontab是否会有冲突呢？<strong>当然不会冲突</strong>，要是冲突，就没有安全性和可靠性而言了。那么具体是怎么做到的呢？</p>
+<h3 id="1-配置文件的独立性">1、配置文件的独立性</h3>
+<blockquote>
+<ul>
+<li>不同用户，在/var/spool/cron/crontabs里存在一个对应的配置文件</li>
+</ul>
+</blockquote>
+<ul>
+<li>保证了 隔离、独立、有效</li>
+<li>如下图，存在 root和shiyanlou 两个用户的crontab
+<img src="https://dn-simplecloud.qbox.me/1790261468650781682-wm" alt="crontab独立性"></li>
+</ul>
+<h3 id="2-守护进程cron自动执行">2、守护进程cron自动执行</h3>
+<blockquote>
+<ul>
+<li>在etc目录下存在如下cron文件，这几个文件会让你的任务计划安装计划正确执行</li>
+</ul>
+</blockquote>
+<ul>
+<li>1、 /etc/cron.daily，目录下的脚本会每天让执行一次，在每天的6点25分时运行；</li>
+<li>2、 /etc/cron.hourly，目录下的脚本会每个小时让执行一次，在每小时的17分钟时运行；</li>
+<li>3、/etc/cron.mouthly，目录下的脚本会每月让执行一次，在每月1号的6点52分时运行；</li>
+<li>4、 /etc/cron.weekly，目录下的脚本会每周让执行一次，在每周第七天的6点47分时运行；</li>
+<li>如下图所示
+<img src="https://dn-simplecloud.qbox.me/1790261468651152728-wm" alt="etc下cron文件"></li>
+</ul>
+<hr>
+<h2 id="crontab进阶"><strong>crontab进阶</strong></h2>
+<p>设定crontab之后，系统管理员最关心的是crontab任务有没有按照计划执行完毕，执行过程中有没有出错？那么我们可以通过查看日志文件来了解请情况。</p>
+<h3 id="1-crontab系统日志">1、crontab系统日志</h3>
+<blockquote>
+<ul>
+<li>默认的系统日志  存在于  /var/log/syslog 文件里</li>
+<li>自定义启用cron日志  通过编辑 /etc/rsyslog.d/50-default.conf配置文件，达到启用cron.log专用日志，详见下图
+<img src="https://dn-simplecloud.qbox.me/1790261468651337661-wm" alt="系统日志"></li>
+</ul>
+</blockquote>
+<h3 id="2-crontab执行日志">2、crontab执行日志</h3>
+<blockquote>
+<ul>
+<li>在crontab命令里，可以自定义执行日志的路径和名称【分 时 日 月 星期 &lt;执行的命令&gt; &lt;执行的日志&gt;】，如下两个实例：</li>
+</ul>
+</blockquote>
+<pre><code class="language-python">（1） * 8 * * 0  /home/shiyanlou/mybin/back.sh 1&gt;&gt;/home/shiyanlou/back.log 2&gt;&gt;/home/shiyanlou/back.log
+ （2） * 8 * * 0 /home/shiyanlou/mybin/back.sh &gt;&gt;/home/shiyanlou/back.log 2&gt;&amp;1
+（1）和（2）是两种不同的写法，但是含义是一样的
+其中，“2&gt;&amp;1” 表示 2跟1使用同一个日志文件
+其中， 1 表示执行的标准日志输出 ；2表示 执行异常的日志输出
+
+作业
+
+撰写一个crontab任务计划，使其完成在“每周日的上午8点自动执行一次备份脚本 back.sh”
+
+back.sh 是对该目录/home/shiyanlou/Code下的blog目录文件进行压缩打包；
+结合上面设定的crontab自动任务，现补充 back.sh的脚本如下：</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux入门之文件系统操作与磁盘管理(4)]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-4/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-4/index.html">
+        </link>
+        <updated>2016-07-17T03:11:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>基本概念</p>
+<p>linux的文件系统，主要包括了linux磁盘分区和目录、挂载基本原理、文件存储结构、常见目录。</p>
+<p>什么是文件系统？</p>
+<p>文件系统是对一个存储设备上的数据和元数据进行组织的机制
+Linux 文件系统体系结构是一个对复杂系统进行抽象化的有趣例子。
+Linux 可以在许多种存储设备上支持许多种文件系统。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>基本概念</p>
+<p>linux的文件系统，主要包括了linux磁盘分区和目录、挂载基本原理、文件存储结构、常见目录。</p>
+<p>什么是文件系统？</p>
+<p>文件系统是对一个存储设备上的数据和元数据进行组织的机制
+Linux 文件系统体系结构是一个对复杂系统进行抽象化的有趣例子。
+Linux 可以在许多种存储设备上支持许多种文件系统。</p>
+<!-- more -->
+<p>什么是挂装（mount）？</p>
+<p>在Linux中将一个文件系统与一个存储设备关联起来的过程称为挂装。
+使用mount命令将一个文件系统附着到当前文件系统层次结构中（根）。
+在执行挂装时，要提供文件系统类型、文件系统和一个挂装点。
+linux 常见目录</p>
+<p>通过tree命令可以查看，根目录下的所有目录
+实验楼
+linux文件类型</p>
+<p>实验楼</p>
+<p>实验楼环境，使用的就是ext4和 tmpfs 这两种文件类型
+ext4 Ext4的文件系统容量达到1EB，而文件容量则达到16TB
+tmpfs tmpfs是最好的基于内存(RAM)的文件系统，自动调整动态文件系统，速度快
+linux目录和分区的关系</p>
+<p>linux目录和分区的关系</p>
+<p>常见操作</p>
+<ol>
+<li>df、du和fdisk命令</li>
+</ol>
+<p>df 查看分区使用情况 （挂载目录情况和空间使用情况）
+du 查看文件占用空间情况（某目录下所有的文件或目录大小）
+fdisk查看硬盘分区表 （实验楼环境无此命令）
+实验楼</p>
+<ol start="2">
+<li>创建虚拟磁盘</li>
+</ol>
+<p>dd命令 用于转换和复制文件，功能很强大。
+losetup命令 用于设置循环设备loop设备（一种伪设备）</p>
+<p>实例介绍</p>
+<ol>
+<li>创建空的磁盘镜像文件，这里创建一个1.44M的软盘
+$ dd if=/dev/zero of=floppy.img bs=512 count=2880</li>
+<li>使用 losetup将磁盘镜像文件虚拟成快设备
+$ losetup /dev/loop1 floppy.img</li>
+<li>挂载块设备
+$ mount /dev/loop0 /tmp
+以上完成通过/tmp目录像访问真实设备来访问磁盘镜像文件floppy.img。</li>
+<li>卸载loop设备
+$ umount /tmp
+$ losetup -d /dev/loop1
+【因为本实验楼环境没有 /dev/loop1，所以无法完成该实例】</li>
+</ol>
+<p>有条件的同学可尝试下， 参考资料： Linux文件系统剖析</p>
+<p>作业</p>
+<p>cowsay 命令</p>
+<p>可以让你在终端里以一种动物说话的形式打印出一段话。 如下：</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux入门之文件打包和压缩(3)]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-3/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-3/index.html">
+        </link>
+        <updated>2016-07-17T03:09:38.000Z</updated>
+        <content type="html"><![CDATA[<p>文件打包和压缩</p>
+<p>zip</p>
+<p>压缩文件 zip -r -q -o 文件名 路径
+查看文件大小 du -h -d 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+shiyanlou:Code/ $ ls                                                 [16:49:03]
+a  a.sh  a.zip  back.sh  blog
+shiyanlou:Code/ $ zip -r -q -o blog.zip  ~/Code/blog                 [16:49:04]
+shiyanlou:Code/ $ du -h -d 0 ~/Code/blog |sort                       [16:52:46]
+104M	/home/shiyanlou/Code/blog
+shiyanlou:Code/ $ du -h -d 0 ~/Code/* |sort                          [16:53:10]
+104M	/home/shiyanlou/Code/blog
+34M	/home/shiyanlou/Code/blog.zip
+4.0K	/home/shiyanlou/Code/a.sh
+4.0K	/home/shiyanlou/Code/a.zip
+4.0K	/home/shiyanlou/Code/back.sh
+8.0K	/home/shiyanlou/Code/a
+shiyanlou:Code/ $
+当前路径 : ./</p>
+<p>upzip</p>
+<p>不解压 查看文件内容
+1
+2
+3
+4
+5
+6
+7
+shiyanlou:Code/ $ unzip -l a.zip                                     [16:46:17]
+Archive:  a.zip
+Length      Date    Time    Name</p>
+<hr>
+<pre><code>   84  2016-07-05 17:02   a.sh
+</code></pre>
+<hr>
+<pre><code>   84                     1 file
+</code></pre>
+<p>解压zip文件 到当前目录
+1
+2
+3
+4
+5
+shiyanlou:Code/ $ ls                                                 [17:00:53]
+a.sh  a.zip  back.sh  blog  blog.zip
+shiyanlou:Code/ $ unzip a.zip -d  a                                  [17:00:54]
+Archive:  a.zip
+inflating: a/a.sh
+tar</p>
+<p>man tar的给出的实例的用法
+tar的实例 打包 ，查看打包后的结果
+tar 解压缩 到创建的临时文件目录上
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+shiyanlou:~/ $ man tar |grep -A 7 EXAMPLES[9:51:34]
+EXAMPLES
+Create archive.tar from files foo and bar.
+tar -cf archive.tar foo bar
+List all files in archive.tar verbosely.
+tar -tvf archive.tar
+Extract all files from archive.tar.
+tar -xf archive.tar
+shiyanlou:~/ $ ls       [9:52:12]
+Code  Desktop  mybin  pc5s  tmp  tmp.tar  tmp.zip  ??????
+shiyanlou:~/ $ tar -zcf tmp.tar.gz ./[9:52:24]
+shiyanlou:~/ $ du -h -d 0 ./*[9:55:11]
+138M./Code
+36K./Desktop
+8.0K./mybin
+4.7M./pc5s
+7.0M./tmp
+5.4M./tmp.tar
+194M./tmp.tar.gz
+3.4M./tmp.zip
+35M./下载
+下面是解压的过程</p>
+<p>交作业</p>
+<p>aafire 火炉实验，多么大的火焰啊，可惜现在是夏天，烤的我好热啊！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux入门之环境变量与文件查找(2)]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-2/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-2/index.html">
+        </link>
+        <updated>2016-07-17T03:07:09.000Z</updated>
+        <content type="html"><![CDATA[<p>环境变量</p>
+<p>分类</p>
+<p>当前 Shell 进程私有用户自定义变量，如上面我们创建的 temp 变量，只在当前 Shell 中有效。
+Shell 本身内建的变量。
+从自定义变量导出的环境变量。
+1 declare tmp;
+2 tmp=&quot;shiyanlou i love y&quot;;
+3 echo $tmp ；</p>
+<p>添加自定义路径到“PATH”环境变量</p>
+<p>这个功能很实用，可以将常用的命令放在 home/shiyanlou/mybin 下
+然后，将此路径添加到PATH中</p>
+<p>查询当前的shell：有如下命令
+ps
+echo $0
+echo $SHELL
+env | grep SHELL</p>
+<p>其他命令
+env 或者 export # 查看当前shell环境变量； set 查看所有环境变量
+unset temp_env # 删除temp_env环境变量
+source .zshrc # 使该shell 源文件 即时生效</p>
+<p>文件查找
+whereis
+which
+locate
+find</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux入门之命令篇(1)]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-1/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-easy-1/index.html">
+        </link>
+        <updated>2016-07-17T02:59:01.000Z</updated>
+        <content type="html"><![CDATA[<p>在linux盛行的今天，不会linux命令何以立足。那么，我们拿到一个linux服务器资源，通过哪些命令来了解该服务器的基本情况呢？</p>
+<p>硬件资源</p>
+<p>**  cpu、内存   可以访问/proc目录**<br>
+cat /proc/cpuinfo # 查看CPU信息 个数、处理器速度
+cat /proc/meminfo # 查看内存信息 内存大小
+**  磁盘、分区  **<br>
+mount | column -t # 查看挂接的分区状态　　
+fdisk -l # 查看所有分区　
+##软件资源</p>
+<p>**  操作系统**<br>
+uname -a # 查看内核/操作系统/CPU信息
+cat /etc/issue # 查看操作系统版本
+cat /proc/version # 查看操作系统版本
+hostname # 查看计算机名　　
+lsmod # 列出加载的内核模块　　
+env # 查看环境变量　
+**  系统资源  **<br>
+top # 看cpu的相关信息
+free -h # 显示内存的情况 内存和交换区使用量　　
+grep MemTotal /proc/meminfo # 查看内存总量
+grep MemFree /proc/meminfo # 查看空闲内存量　
+vmstat # CPU、内存、IO的情况，详细参数可参考Linux vmstat命令实战详解
+uptime # 开机多久 几个人用 负载（load average）是多少
+cat /proc/loadavg # 查看系统负载
+df -h # 查看各分区使用情况　　
+du -sh # 查看指定目录的大小　　
+du 默认是循环列出所有的目录和文件的大小
+du -h -d  1   /path           -d 1 和  --max-depth=1  功能一样
+du -h --max-depth= 1  /path       能够查看path下的目录大小
+du -h --max-depth= 1  /path/*    能够查看path下所有文件和目录的大小
+mount | column -t # 查看挂接的分区状态　　
+fdisk -l # 查看所有分区　
+load average 的含义：三个值分别指系统在最后 1/5/15分钟的平均负载。
+根据经验：我们应该把重点放在5/15分钟的平均负载，因为1分钟的平均负载太频繁，一瞬间的高并发就会导致该值的大幅度改变。</p>
+<p>**  网络  **  　
+ifconfig # 查看所有网络接口的属性　　
+iptables -L # 查看防火墙设置　　
+route -n # 查看路由表　　
+netstat -lntp # 查看所有监听端口　　
+netstat -antp # 查看所有已经建立的连接　　
+netstat -s # 查看网络统计信息
+**  进程  **  　　　
+ps -ef # 查看所有进程　　
+top # 实时显示进程状态
+crontab - l # 查看自动任务
+crobtab -e # 编写自动任务
+**  用户  **
+w # 查看活动用户　　
+id # 查看指定用户信息　　
+last # 查看用户登录日志　　
+cut -d : -f 1 /etc/passwd # 查看系统所有用户　　
+cut -d : -f 1 /etc/group # 查看系统所有组　　
+通过上述命令，是不是对自己的linux的情况有了大致的了解了呢？
+是的话请给个赞吧！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GVIM的使用指南（VI命令）]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-vi/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke-linux-vi/index.html">
+        </link>
+        <updated>2016-06-30T02:57:18.000Z</updated>
+        <content type="html"><![CDATA[<p>快速定位到某行</p>
+<p>nG 将光标移动到第n行。
+G 将光标移动到最后一行。
+gg 将光标移动到第一行。
+查找</p>
+<p>命令模式：输入 /word 后回车，即查找word，按 n 查找下一个匹配单词，按 N 查找上一个匹配单词。</p>
+<p>剪切/复制、粘贴</p>
+<p>命令模式：d 剪切， y 复制，p 粘贴 。
+vl从某个字母开始进行选择。
+命令模式：dd 剪切该行，yy复制改行
+前切三行：3dd,即从当前行+下两行被剪切了。
+cc光标移动到最后一行。
+yyp 复制本行在本行下面进行粘贴
+yyP 复制本行在本行上面进行粘贴
+同理 ddp ddP 可以迅速交换两行
+替换</p>
+<p>命令模式： r 单个字母替换。
+命令模式： R 多个字母替换，这种情况用的多些，调整完毕之后。由替换模块切回到原模式。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[博客折腾记（HEXO＋Github）]]></title>
+        <id>/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke/index.html</id>
+        <link href="/Users/zhangnan12/Documents/Gridea/output/post/hexo-on-boke/index.html">
+        </link>
+        <updated>2016-06-29T02:54:01.000Z</updated>
+        <content type="html"><![CDATA[<p>闲着就要折腾！</p>
+<p>因为个人在搭建的过程中遇到了一些流程上的问题诸如hexo 和 node的关系，hexo和github的关系等，所以该文主要是讲解一下搭建博客的整个流程，为后来者提供一下经验，仅供参考！</p>
+<p>首先给出自己的linux环境参数</p>
+<p>ubuntu: 14.04 ( cat /etc/issue )
+linux version: 3.13.0-generic ( cat
+/proc/version )
+linux系统位数：X86_64 ( sudo uname –m )
+hexo 版本: 3.2.0 (hexo -v)
+可以用实验楼的linux资源，个人觉得很方便</p>
+<p>大概分三步完成：</p>
+<ol>
+<li>在linux下安装hexo，通过hexo新建一个博客
+hexo是一款基于Node.js的静态博客框架，讲究的就是快准狠。所以先要安装Node.js，安装过程请参照其他的博客，安装node之后，通过其npm命令安装hexo。然后通过如下两个命令 node -v 和 hexo -v 显示相应的版本信息后，表示 node和hexo安装成功。</li>
+</ol>
+<p>shiyanlou:mysite/ $ node -v [14:49:05]
+v0.10.25
+shiyanlou:mysite/ $ hexo -v [14:57:45]
+hexo: 3.2.0
+hexo-cli: 1.0.2
+os: Linux 3.13.0-30-generic linux x64
+http_parser: 1.0
+node: 0.10.25
+v8: 3.14.5.9
+ares: 1.10.0
+uv: 0.10.23
+zlib: 1.2.8
+modules: 11
+openssl: 1.0.1f
+如果没有安装，可参看本文</p>
+<p>sudo apt-get install nodejs
+sudo apt-get install npm
+sudo npm install -g hexo
+或 sudo npm install hexo-cli -g
+安装hexo之后，就可以通过hexo的几个命令生成一个的轻博客。
+先建一个文件夹，例如 mysite（mysite 就是你的博客根目录），然后进入该目录，执行init命令hexo</p>
+<p>hexo init 初始化命令
+hexo server 启动服务命令</p>
+<p>hexo s
+INFO Hexo is running at http://localhost:4000/mysite/. Press Ctrl+C to stop.</p>
+<p>显示如上说明成功了，可以在浏览器中进行验证 http://localhost:4000/mysite</p>
+<ol start="2">
+<li>
+<p>在github中新建一个github pages的主页
+根据github pages的官方文档英文就可以一步步的建立一个空间（仓库repository），当然可会给你看这个中文的
+用GitHub Pages 快速搭建一个自己的网页
+建完之后发现，就是一个很简单的主页，github会提供一些博客模板但都不是很fashion。这就是为什么上面会先提到hexo。
+这就是你的空间地址： https://yourname.github.io 。</p>
+</li>
+<li>
+<p>在 HEXO中配置github的相关信息
+这一步的目的就是将第一步hexo生成的博客直接发布到第二部github pages空间里。以后就直接通过 markdown的文本编辑器编写博客文章，然后通过hexo发布到github里，最后就可以通过你的空间地址： https://yourname.github.io 进行访问最新的博客内容啦。</p>
+</li>
+</ol>
+<p>这里有详细的hexo中 配置文件的配置_config.yml的修改，以及hexo的发布博客的命令。</p>
+<p>hexo clean
+hexo g
+hexo d
+记录网站诞生过程-使用hexo+github pages</p>
+<p>很多文章提到配置SSH keys，其目的就是通过hexo发布到github里时，是否需要输入密码，因为你频繁发布博客的话，最好是配置相应的SSHkeys，以后就不用输入了。</p>
+]]></content>
+    </entry>
+</feed>
