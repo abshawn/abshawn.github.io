@@ -88,23 +88,28 @@
             </div>
             
             <div class="post-content">
-              <p>闲着就要折腾！</p>
+              <h2 id="闲着就要折腾">闲着就要折腾！</h2>
+<blockquote>
 <p>因为个人在搭建的过程中遇到了一些流程上的问题诸如hexo 和 node的关系，hexo和github的关系等，所以该文主要是讲解一下搭建博客的整个流程，为后来者提供一下经验，仅供参考！</p>
+</blockquote>
+<!-- more -->
 <p>首先给出自己的linux环境参数</p>
-<p>ubuntu: 14.04 ( cat /etc/issue )
-linux version: 3.13.0-generic ( cat
-/proc/version )
-linux系统位数：X86_64 ( sudo uname –m )
-hexo 版本: 3.2.0 (hexo -v)
-可以用实验楼的linux资源，个人觉得很方便</p>
-<p>大概分三步完成：</p>
+<ul>
+<li>ubuntu: 14.04 ( cat /etc/issue )</li>
+<li>linux version: 3.13.0-generic ( cat
+/proc/version )</li>
+<li>linux系统位数：X86_64 ( sudo uname –m )</li>
+<li>hexo 版本: 3.2.0   (hexo -v)</li>
+</ul>
+<p>可以用实验楼的linux资源，个人觉得很方便</p>
+<h2 id="大概分三步完成">大概分三步完成：</h2>
 <ol>
 <li>在linux下安装hexo，通过hexo新建一个博客
 hexo是一款基于Node.js的静态博客框架，讲究的就是快准狠。所以先要安装Node.js，安装过程请参照其他的博客，安装node之后，通过其npm命令安装hexo。然后通过如下两个命令 node -v 和 hexo -v 显示相应的版本信息后，表示 node和hexo安装成功。</li>
 </ol>
-<p>shiyanlou:mysite/ $ node -v [14:49:05]
+<p>shiyanlou:mysite/ $ node -v                                          [14:49:05]
 v0.10.25
-shiyanlou:mysite/ $ hexo -v [14:57:45]
+shiyanlou:mysite/ $ hexo -v                                          [14:57:45]
 hexo: 3.2.0
 hexo-cli: 1.0.2
 os: Linux 3.13.0-30-generic linux x64
@@ -152,6 +157,15 @@ hexo d
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://abshawn.github.io/post/hexo-on-boke">
+              <h3 class="post-title">
+                博客折腾记（HEXO＋Github）
+              </h3>
+            </a>
+          </div>
         
 
         

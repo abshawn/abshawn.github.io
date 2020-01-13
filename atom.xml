@@ -2,14 +2,331 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abshawn.github.io</id>
     <title>My Home</title>
-    <updated>2019-06-16T03:45:08.228Z</updated>
+    <updated>2020-01-13T09:42:16.766Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abshawn.github.io"/>
     <link rel="self" href="https://abshawn.github.io/atom.xml"/>
     <subtitle>记录我的技术博客之路</subtitle>
     <logo>https://abshawn.github.io/images/avatar.png</logo>
     <icon>https://abshawn.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, My Home</rights>
+    <rights>All rights reserved 2020, My Home</rights>
+    <entry>
+        <title type="html"><![CDATA[JAVA消息队列]]></title>
+        <id>https://abshawn.github.io/post/java-xiao-xi-dui-lie</id>
+        <link href="https://abshawn.github.io/post/java-xiao-xi-dui-lie">
+        </link>
+        <updated>2019-12-31T09:43:23.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>1</p>
+</blockquote>
+<p>近期公司项目中，听同事提起MQ、JMS，因为之前没有使用过不太了解，所以抽出半天时间学习下，了解下相关概念、功能及其用途。便于再次与人沟通时可以言之有物，后续工作中遇到了，可立马上手，提高工作效率。</p>
+<h3 id="学习过程分为三个步骤">学习过程分为三个步骤：###</h3>
+<ul>
+<li>1  查找资料</li>
+<li>2  实验实践</li>
+<li>3  归纳总结</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2199827-04f33bdc2f8e00d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="学习思路.jpg"></p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>###查找资料###
+推荐两篇博客，内容不错。</p>
+<ul>
+<li>1  <a href="http://www.cnblogs.com/chenpi/p/5559349.html">JMS(Java消息服务)入门教程</a>     ，比较适合了解基本知识，包括概念、分类、用途及其原理。</li>
+<li>2 <a href="http://blog.sina.com.cn/s/blog_6166d8170100h0ty.html">消息队列MQ技术的介绍和原理</a>，介绍了消息队列MQ的基本知识点。
+此处不再对技术内容进行复制粘贴，仅提供学习思路。首先用what、how、why提出自己心中感兴趣的几个问题，然后在到资料中找出想要的答案。例如：什么是Java消息服务？MQ? 为什么要有消息服务？优点是什么？消息服务是如何实现的？
+JSM <em>Java Message Service</em>， MQ <em>Message Queue</em></li>
+</ul>
+<blockquote>
+<p>3</p>
+</blockquote>
+<p>####实验####
+通过上面的快速阅读和详细阅读之后，已经在概念上了解了，下面通过一个实验对概念和原理进行深入的理解，了解其用途及其适用范围。</p>
+<ul>
+<li>1  环境介绍
+apache-tomcat-7.0.61、apache-activemq-5.6.0、eclipse neon、jdk 1.8.0 ；</li>
+<li>2 实验代码工程链接地址
+https://github.com/abshawn/JMSProject  ，可以从此处下载代码，在本地部署查看效果。</li>
+<li>3 实验效果截图
+通过activemq可以监控到消息队列的内容。
+<img src="http://upload-images.jianshu.io/upload_images/2199827-a477301f88f244c9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ActiveMQ.jpg"></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2199827-882bc8be911b30f6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="消息生产者.jpg"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2199827-e9d970824185b7c5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="消息消费者.jpg"></p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>###归纳总结###
+** JMS “ 一个中心，两种模式，三步实现”**</p>
+<ul>
+<li>1 以 消息服务器为中心
+消息生产者 通过客户端发消息给消息服务器；  消息消费者通过消息服务器接收消息；</li>
+<li>2 两种消息发送模型
+两种消息发送模型规范：点对点、发布订阅 ；</li>
+<li>3 实现方法分为三步
+3.1、 统一消息服务器，建立连接Connections ；
+3.2 、通过连接建立队列会话session；
+3.3 、准备就绪后，执行 生产者 发消息和消费者 接消息（异步）。
+ 
+**优点     ** 解耦合、异步</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[npm常用命令使用指南]]></title>
+        <id>https://abshawn.github.io/post/npm-chang-yong-ming-ling-shi-yong-zhi-nan</id>
+        <link href="https://abshawn.github.io/post/npm-chang-yong-ming-ling-shi-yong-zhi-nan">
+        </link>
+        <updated>2019-07-08T11:17:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>总结自己常用的npm命令；</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>总结自己常用的npm命令；</p>
+<!-- more -->
+<p>查看已安装的全局的包
+npm list -g --depth 0</p>
+<p>安装webpack
+npm install webpack -g  | npm install  -g webpack</p>
+<p>卸载webpack
+npm uninstall webpack -g  | npm uninstall  -g webpack
+卸载后，重新打开终端，输入查看已安装包命令即可</p>
+<p>查看mac本的全局安装包和当前文件夹下的安装包：</p>
+<p>ZBMAC-C02VX3K0H:~ zhangnan12$ which npm
+/usr/local/bin/npm</p>
+<p>sudo npm install -g nornj-cli
+全局包安装在   /usr/local/lib  下面的 node_modules
+sudo npm uninstall -g nornj-cli</p>
+<p>ZBMAC-C02VX3K0H:~ zhangnan12$ npm ls -g --depth 0
+/usr/local/lib
+├── @vue/cli@3.9.2
+├── asar@0.14.3
+├── cc-cli@1.0.13
+├── create-react-app@2.1.3
+├── es-checker@1.4.1
+├── install@0.12.2
+├── n@4.1.0
+├── nornj-cli@0.4.1
+├── npm@6.10.0
+└── webpack@4.35.2</p>
+<p>ZBMAC-C02VX3K0H:~ zhangnan12$ npm ls  --depth 0
+/Users/zhangnan12
+├── @babel/core@7.3.4
+└── list@2.0.18</p>
+<ol start="2">
+<li>全局包 安装在 /usr/local/lib  下面的 node_modules下
+该文件夹的权限是 admin ，所以安装的时候总是提示 “errno -13”
+ZBMAC-C02VX3K0H:~ zhangnan12$ npm i -g npm
+npm WARN checkPermissions Missing write access to /usr/local/lib/node_modules/npm
+npm WARN checkPermissions Missing write access to /usr/local/lib/node_modules
+npm ERR! path /usr/local/lib/node_modules/npm
+npm ERR! code EACCES
+npm ERR! errno -13
+npm ERR! syscall access
+npm ERR! Error: EACCES: permission denied, access '/usr/local/lib/node_modules/npm'
+npm ERR!  { [Error: EACCES: permission denied, access '/usr/local/lib/node_modules/npm']
+npm ERR!   stack:
+npm ERR!    'Error: EACCES: permission denied, access '/usr/local/lib/node_modules/npm'',
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'access',
+npm ERR!   path: '/usr/local/lib/node_modules/npm' }
+npm ERR!
+npm ERR! The operation was rejected by your operating system.
+npm ERR! It is likely you do not have the permissions to access this file as the current user
+npm ERR!
+npm ERR! If you believe this might be a permissions issue, please double-check the
+npm ERR! permissions of the file and its containing directories, or try running
+npm ERR! the command again as root/Administrator (though this is not recommended).</li>
+</ol>
+<p>npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/zhangnan12/.npm/_logs/2019-07-08T11_34_08_170Z-debug.log</p>
+<p>解决方法：
+将 /usr/local/lib  下面的 node_modules下，定义在 有权限的  /user/zhangnan/lib 下的node_modules
+就方便了，后续安装的时候不用 sudo</p>
+<p>创建全局的npm包安装路径
+.npm-global 是隐藏文件夹   lib是显性文件夹 ，通过shift+command+.来 切换隐藏和显示
+mkdir ~/.npm-global | 或者 mkdir  ~/lib</p>
+<p>配置npm使用新的路径</p>
+<p>npm config set prefix '~/.npm-global'</p>
+<p>打开或者新建～/.profile文件并添加如下行</p>
+<p>export PATH=~/.npm-global/bin:$PATH</p>
+<p>更新刚才添加的环境变量</p>
+<p>source ~/.profile</p>
+<p>测试一下ok啦</p>
+<p>npm install -g brower-sync</p>
+<hr>
+<p>3)修改全局npm包的路径</p>
+<p>ZBMAC-C02VX3K0H:~ zhangnan12$ ls -ltra|grep .npm
+drwxr-xr-x    8 zhangnan12  360BUYAD\Domain Users       256  1 28 10:46 .npm
+-rw-------    1 zhangnan12  360BUYAD\Domain Users        63  7  9 09:49 .npmrc</p>
+<p>.npmrc 文件是存在 npm config 命令的内容的；</p>
+<pre><code>ZBMAC-C02VX3K0H:~ zhangnan12$ npm config list
+</code></pre>
+<p>; cli configs
+metrics-registry = &quot;https://registry.npm.taobao.org/&quot;
+scope = &quot;&quot;
+user-agent = &quot;npm/6.10.0 node/v10.15.0 darwin x64&quot;</p>
+<p>; userconfig /Users/zhangnan12/.npmrc
+prefix = &quot;/Users/zhangnan12/.npm-global&quot;
+registry = &quot;https://registry.npm.taobao.org/&quot;</p>
+<p>; node bin location = /usr/local/bin/node
+; cwd = /Users/zhangnan12
+; HOME = /Users/zhangnan12
+; &quot;npm config ls -l&quot; to show all defaults.</p>
+<p>ZBMAC-C02VX3K0H:~ zhangnan12$ cat .npmrc
+registry=https://registry.npm.taobao.org/
+prefix=~/.npm-global</p>
+<p>这个命令是修改全局npm安装包的存储本地的路径的；
+npm config set prefix '~/lib'</p>
+<p>修改路径后，添加到mac环境变量中进行生效 , $PATH存放在如下隐藏文件中。
+.bash_profile</p>
+<p>---查看 存放的地方， 在NPM_HOME路径下的  node_modules中。
+ZBMAC-C02VX3K0H:~ zhangnan12$ npm root
+/Users/zhangnan12/node_modules
+ZBMAC-C02VX3K0H:~ zhangnan12$ npm root -g
+/Users/zhangnan12/.npm-global/lib/node_modules</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何学习研究新的东西]]></title>
+        <id>https://abshawn.github.io/post/ru-he-xue-xi-yan-jiu-xin-de-dong-xi</id>
+        <link href="https://abshawn.github.io/post/ru-he-xue-xi-yan-jiu-xin-de-dong-xi">
+        </link>
+        <updated>2019-07-05T06:54:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>学习之道：渐进式的学习方法，引入新领域的东西与原来的知识进行关联，进而产生创新的知识点
+学习之术：刘澜老师-去学习、成甲老师-好好学习等</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>学习之道：渐进式的学习方法，引入新领域的东西与原来的知识进行关联，进而产生创新的知识点
+学习之术：刘澜老师-去学习、成甲老师-好好学习等</p>
+<!-- more --> 
+<p>承认的带问题或项目的学习思路
+1、目标 ； 2、发散；3、聚焦；4、应用</p>
+<p><img src="http://assets.processon.com/chart_image/5d1ef778e4b0aad4c92696bd.png" alt="processon 网络思维导图"></p>
+<p>思维导图可以应用在发散过程中，自己学习过程中的问题，就是发散过度后产生聚焦忧虑症，觉得时间不够用在发散过程中浪费了很多时间。</p>
+<p>聚焦可以着重专研，实际解决1和2过程中了解到的最关键的技术，为了完成4；</p>
+<p>回顾2和3的过程，继续差缺补漏。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[构建前端脚手架（2）-前端知识点]]></title>
+        <id>https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia-2-qian-duan-zhi-shi-dian</id>
+        <link href="https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia-2-qian-duan-zhi-shi-dian">
+        </link>
+        <updated>2019-07-04T11:26:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>node，npm，npx</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>node，npm，npx</p>
+<!-- more -->
+<p>（1）NPM（node package manager）是 node.js 的包管理和分发工具。它类似于PHP的Composer，Ruby的gem，Python的pip，Java的Maven……它可以让 javascript 开发者能够更加轻松的共享代码和共用代码片段，并且通过 npm 管理你分享的代码也很方便快捷和简单 。
+npm 随node一并安装，但不是最新版，可以使用如下命令进行更新。
+npm install npm@latest -g
+查看配置信息
+npm config list -l<br>
+查看 npm 命令列表
+$ npm help
+$ npm install -h</p>
+<p>（2）NPX 。
+npx 想要解决的主要问题，就是调用项目内部安装的模块。
+npx避免全局安装模块
+$ npx create-react-app my-react-app    npx 将create-react-app下载到一个临时目录，使用以后再删除。所以，以后再次执行上面的命令，会重新下载create-react-app。</p>
+<p>npx执行 GitHub 源码
+npx 还可以执行 GitHub 上面的模块源码。</p>
+<p>执行 Gist 代码
+$ npx https://gist.github.com/zkat/4bc19503fe9e9309e2bfaa2c58074d32
+执行仓库代码
+$ npx github:piuccio/cowsay hello
+注意，远程代码必须是一个模块，即必须包含package.json和入口脚本。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[构建前端脚手架（1）-实现原理]]></title>
+        <id>https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia-1-shi-xian-yuan-li</id>
+        <link href="https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia-1-shi-xian-yuan-li">
+        </link>
+        <updated>2019-07-04T10:12:31.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<h3 id="前端脚手架是什么">前端脚手架是什么</h3>
+<h3 id="前端脚手架的">前端脚手架的</h3>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[构建前端脚手架-综述]]></title>
+        <id>https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia</id>
+        <link href="https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia">
+        </link>
+        <updated>2019-07-04T10:04:56.000Z</updated>
+        <summary type="html"><![CDATA[<p>身为一名devops对于自动化的工具非常好奇，对于前端脚手架自然也不能放过研究的机会。
+问题难点，作为前端小白对于前端的工具、脚手架的原理和开发工具知之甚少。这也是对自己的挑战。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>身为一名devops对于自动化的工具非常好奇，对于前端脚手架自然也不能放过研究的机会。
+问题难点，作为前端小白对于前端的工具、脚手架的原理和开发工具知之甚少。这也是对自己的挑战。</p>
+<!-- more -->
+<p>拆分问题：
+1、弄清楚 前端脚手架的原理；
+2、开发脚手架的工具列表；
+3、拆分一个脚手架案例；
+4、编写一个属于自己的脚手架；
+5、总结、思考前端脚手架的自动化方法和思路；</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[java8的写法]]></title>
+        <id>https://abshawn.github.io/post/java8</id>
+        <link href="https://abshawn.github.io/post/java8">
+        </link>
+        <updated>2019-06-06T08:08:13.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="java8-的写法">java8 的写法</h1>
+<h2 id="lambda表达式">lambda表达式</h2>
+<pre><code>String[] atp = {&quot;Rafael Nadal&quot;, &quot;Novak Djokovic&quot;,
+                &quot;Stanislas Wawrinka&quot;,
+                &quot;David Ferrer&quot;,&quot;Roger Federer&quot;,
+                &quot;Andy Murray&quot;,&quot;Tomas Berdych&quot;,
+                &quot;Juan Martin Del Potro&quot;};
+List&lt;String&gt; players =  Arrays.asList(atp);
+
+// 以前的循环方式
+for (String player : players) {
+    System.out.print(player + &quot;; &quot;);
+}
+
+// 使用 lambda 表达式以及函数操作(functional operation)
+//        参数 + 表达式
+players.forEach((player) -&gt; System.out.print(player + &quot;; &quot;));
+// 在 Java 8 中使用双冒号操作符(double colon operator)
+players.forEach(System.out::println);
+</code></pre>
+<h2 id="循环">循环</h2>
+<pre><code>  List&lt;RapServicecatalog&gt; rapServicecatalogList = rapServicecatalogMapper.selectByExample(rapServicecatalogExample);
+        List&lt;TreeNode&gt; treeNodeList =   new ArrayList&lt;&gt; () ;
+
+        rapServicecatalogList.forEach(servicecatalog  -&gt;{
+            TreeNode temp=   new TreeNode();
+            temp.setId(servicecatalog.getId());
+            temp.setLabel(servicecatalog.getName());
+            treeNodeList.add(temp);
+        });
+</code></pre>
+<h2 id="泛型">泛型</h2>
+<p>Java泛型中的标记符含义：</p>
+<p>E - Element (在集合中使用，因为集合中存放的是元素)</p>
+<p>T - Type（Java 类）</p>
+<p>K - Key（键）</p>
+<p>V - Value（值）</p>
+<p>N - Number（数值类型）</p>
+<p>？ -  表示不确定的java类型</p>
+<p>S、U、V  - 2nd、3rd、4th types</p>
+<p>Object跟这些标记符代表的java类型有啥区别呢？</p>
+<p>Object是所有类的根类，任何类的对象都可以设置给该Object引用变量，使用的时候可能需要类型强制转换，但是用使用了泛型T、E等这些标识符后，在实际用之前类型就已经确定了，不需要再进行类型强制转换。</p>
+<h2 id="函数式编程">函数式编程</h2>
+<h2 id="serializable序列化接口">Serializable序列化接口</h2>
+<p>private static final long serialVersionUID = 1L;
+作为一个标识，让jvm来帮助对类进行序列化；</p>
+<p>序列化之后，可以进行传输和存储；
+一般 entity 实体；和 vo 前端传给后端需要序列化；</p>
+<p>技巧：可以在基础类，父类上implement serializable ；
+子类就不需要重复实现啦；</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[撰写博客的日志记录]]></title>
         <id>https://abshawn.github.io/post/log-record</id>
@@ -74,64 +391,6 @@
 内容：实验楼linux环境搭建，hexo的安装，github ssh验证。
 补充：
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[java8的写法]]></title>
-        <id>https://abshawn.github.io/post/java8</id>
-        <link href="https://abshawn.github.io/post/java8">
-        </link>
-        <updated>2019-06-06T08:08:13.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="java8-的写法">java8 的写法</h1>
-<h2 id="lambda表达式">lambda表达式</h2>
-<pre><code>String[] atp = {&quot;Rafael Nadal&quot;, &quot;Novak Djokovic&quot;,
-                &quot;Stanislas Wawrinka&quot;,
-                &quot;David Ferrer&quot;,&quot;Roger Federer&quot;,
-                &quot;Andy Murray&quot;,&quot;Tomas Berdych&quot;,
-                &quot;Juan Martin Del Potro&quot;};
-List&lt;String&gt; players =  Arrays.asList(atp);
-
-// 以前的循环方式
-for (String player : players) {
-    System.out.print(player + &quot;; &quot;);
-}
-
-// 使用 lambda 表达式以及函数操作(functional operation)
-//        参数 + 表达式
-players.forEach((player) -&gt; System.out.print(player + &quot;; &quot;));
-// 在 Java 8 中使用双冒号操作符(double colon operator)
-players.forEach(System.out::println);
-</code></pre>
-<h2 id="循环">循环</h2>
-<pre><code>  List&lt;RapServicecatalog&gt; rapServicecatalogList = rapServicecatalogMapper.selectByExample(rapServicecatalogExample);
-        List&lt;TreeNode&gt; treeNodeList =   new ArrayList&lt;&gt; () ;
-
-        rapServicecatalogList.forEach(servicecatalog  -&gt;{
-            TreeNode temp=   new TreeNode();
-            temp.setId(servicecatalog.getId());
-            temp.setLabel(servicecatalog.getName());
-            treeNodeList.add(temp);
-        });
-</code></pre>
-<h2 id="泛型">泛型</h2>
-<p>Java泛型中的标记符含义：</p>
-<p>E - Element (在集合中使用，因为集合中存放的是元素)</p>
-<p>T - Type（Java 类）</p>
-<p>K - Key（键）</p>
-<p>V - Value（值）</p>
-<p>N - Number（数值类型）</p>
-<p>？ -  表示不确定的java类型</p>
-<p>S、U、V  - 2nd、3rd、4th types</p>
-<p>Object跟这些标记符代表的java类型有啥区别呢？</p>
-<p>Object是所有类的根类，任何类的对象都可以设置给该Object引用变量，使用的时候可能需要类型强制转换，但是用使用了泛型T、E等这些标识符后，在实际用之前类型就已经确定了，不需要再进行类型强制转换。</p>
-<h2 id="函数式编程">函数式编程</h2>
-<h2 id="serializable序列化接口">Serializable序列化接口</h2>
-<p>private static final long serialVersionUID = 1L;
-作为一个标识，让jvm来帮助对类进行序列化；</p>
-<p>序列化之后，可以进行传输和存储；
-一般 entity 实体；和 vo 前端传给后端需要序列化；</p>
-<p>技巧：可以在基础类，父类上implement serializable ；
-子类就不需要重复实现啦；</p>
 ]]></content>
     </entry>
     <entry>
@@ -313,378 +572,6 @@ crontab格式和参数.png
 
 back.sh 是对该目录/home/shiyanlou/Code下的blog目录文件进行压缩打包；
 结合上面设定的crontab自动任务，现补充 back.sh的脚本如下：</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[linux入门之文件系统操作与磁盘管理(4)]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke-linux-easy-4</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke-linux-easy-4">
-        </link>
-        <updated>2016-07-17T03:11:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>基本概念</p>
-<p>linux的文件系统，主要包括了linux磁盘分区和目录、挂载基本原理、文件存储结构、常见目录。</p>
-<p>什么是文件系统？</p>
-<p>文件系统是对一个存储设备上的数据和元数据进行组织的机制
-Linux 文件系统体系结构是一个对复杂系统进行抽象化的有趣例子。
-Linux 可以在许多种存储设备上支持许多种文件系统。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>基本概念</p>
-<p>linux的文件系统，主要包括了linux磁盘分区和目录、挂载基本原理、文件存储结构、常见目录。</p>
-<p>什么是文件系统？</p>
-<p>文件系统是对一个存储设备上的数据和元数据进行组织的机制
-Linux 文件系统体系结构是一个对复杂系统进行抽象化的有趣例子。
-Linux 可以在许多种存储设备上支持许多种文件系统。</p>
-<!-- more -->
-<p>什么是挂装（mount）？</p>
-<p>在Linux中将一个文件系统与一个存储设备关联起来的过程称为挂装。
-使用mount命令将一个文件系统附着到当前文件系统层次结构中（根）。
-在执行挂装时，要提供文件系统类型、文件系统和一个挂装点。
-linux 常见目录</p>
-<p>通过tree命令可以查看，根目录下的所有目录
-实验楼
-linux文件类型</p>
-<p>实验楼</p>
-<p>实验楼环境，使用的就是ext4和 tmpfs 这两种文件类型
-ext4 Ext4的文件系统容量达到1EB，而文件容量则达到16TB
-tmpfs tmpfs是最好的基于内存(RAM)的文件系统，自动调整动态文件系统，速度快
-linux目录和分区的关系</p>
-<p>linux目录和分区的关系</p>
-<p>常见操作</p>
-<ol>
-<li>df、du和fdisk命令</li>
-</ol>
-<p>df 查看分区使用情况 （挂载目录情况和空间使用情况）
-du 查看文件占用空间情况（某目录下所有的文件或目录大小）
-fdisk查看硬盘分区表 （实验楼环境无此命令）
-实验楼</p>
-<ol start="2">
-<li>创建虚拟磁盘</li>
-</ol>
-<p>dd命令 用于转换和复制文件，功能很强大。
-losetup命令 用于设置循环设备loop设备（一种伪设备）</p>
-<p>实例介绍</p>
-<ol>
-<li>创建空的磁盘镜像文件，这里创建一个1.44M的软盘
-$ dd if=/dev/zero of=floppy.img bs=512 count=2880</li>
-<li>使用 losetup将磁盘镜像文件虚拟成快设备
-$ losetup /dev/loop1 floppy.img</li>
-<li>挂载块设备
-$ mount /dev/loop0 /tmp
-以上完成通过/tmp目录像访问真实设备来访问磁盘镜像文件floppy.img。</li>
-<li>卸载loop设备
-$ umount /tmp
-$ losetup -d /dev/loop1
-【因为本实验楼环境没有 /dev/loop1，所以无法完成该实例】</li>
-</ol>
-<p>有条件的同学可尝试下， 参考资料： Linux文件系统剖析</p>
-<p>作业</p>
-<p>cowsay 命令</p>
-<p>可以让你在终端里以一种动物说话的形式打印出一段话。 如下：</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[linux入门之文件打包和压缩(3)]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke-linux-easy-3</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke-linux-easy-3">
-        </link>
-        <updated>2016-07-17T03:09:38.000Z</updated>
-        <content type="html"><![CDATA[<p>文件打包和压缩</p>
-<p>zip</p>
-<p>压缩文件 zip -r -q -o 文件名 路径
-查看文件大小 du -h -d 0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-shiyanlou:Code/ $ ls                                                 [16:49:03]
-a  a.sh  a.zip  back.sh  blog
-shiyanlou:Code/ $ zip -r -q -o blog.zip  ~/Code/blog                 [16:49:04]
-shiyanlou:Code/ $ du -h -d 0 ~/Code/blog |sort                       [16:52:46]
-104M	/home/shiyanlou/Code/blog
-shiyanlou:Code/ $ du -h -d 0 ~/Code/* |sort                          [16:53:10]
-104M	/home/shiyanlou/Code/blog
-34M	/home/shiyanlou/Code/blog.zip
-4.0K	/home/shiyanlou/Code/a.sh
-4.0K	/home/shiyanlou/Code/a.zip
-4.0K	/home/shiyanlou/Code/back.sh
-8.0K	/home/shiyanlou/Code/a
-shiyanlou:Code/ $
-当前路径 : ./</p>
-<p>upzip</p>
-<p>不解压 查看文件内容
-1
-2
-3
-4
-5
-6
-7
-shiyanlou:Code/ $ unzip -l a.zip                                     [16:46:17]
-Archive:  a.zip
-Length      Date    Time    Name</p>
-<hr>
-<pre><code>   84  2016-07-05 17:02   a.sh
-</code></pre>
-<hr>
-<pre><code>   84                     1 file
-</code></pre>
-<p>解压zip文件 到当前目录
-1
-2
-3
-4
-5
-shiyanlou:Code/ $ ls                                                 [17:00:53]
-a.sh  a.zip  back.sh  blog  blog.zip
-shiyanlou:Code/ $ unzip a.zip -d  a                                  [17:00:54]
-Archive:  a.zip
-inflating: a/a.sh
-tar</p>
-<p>man tar的给出的实例的用法
-tar的实例 打包 ，查看打包后的结果
-tar 解压缩 到创建的临时文件目录上
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-shiyanlou:~/ $ man tar |grep -A 7 EXAMPLES[9:51:34]
-EXAMPLES
-Create archive.tar from files foo and bar.
-tar -cf archive.tar foo bar
-List all files in archive.tar verbosely.
-tar -tvf archive.tar
-Extract all files from archive.tar.
-tar -xf archive.tar
-shiyanlou:~/ $ ls       [9:52:12]
-Code  Desktop  mybin  pc5s  tmp  tmp.tar  tmp.zip  ??????
-shiyanlou:~/ $ tar -zcf tmp.tar.gz ./[9:52:24]
-shiyanlou:~/ $ du -h -d 0 ./*[9:55:11]
-138M./Code
-36K./Desktop
-8.0K./mybin
-4.7M./pc5s
-7.0M./tmp
-5.4M./tmp.tar
-194M./tmp.tar.gz
-3.4M./tmp.zip
-35M./下载
-下面是解压的过程</p>
-<p>交作业</p>
-<p>aafire 火炉实验，多么大的火焰啊，可惜现在是夏天，烤的我好热啊！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[linux入门之环境变量与文件查找(2)]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke-linux-easy-2</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke-linux-easy-2">
-        </link>
-        <updated>2016-07-17T03:07:09.000Z</updated>
-        <content type="html"><![CDATA[<p>环境变量</p>
-<p>分类</p>
-<p>当前 Shell 进程私有用户自定义变量，如上面我们创建的 temp 变量，只在当前 Shell 中有效。
-Shell 本身内建的变量。
-从自定义变量导出的环境变量。
-1 declare tmp;
-2 tmp=&quot;shiyanlou i love y&quot;;
-3 echo $tmp ；</p>
-<p>添加自定义路径到“PATH”环境变量</p>
-<p>这个功能很实用，可以将常用的命令放在 home/shiyanlou/mybin 下
-然后，将此路径添加到PATH中</p>
-<p>查询当前的shell：有如下命令
-ps
-echo $0
-echo $SHELL
-env | grep SHELL</p>
-<p>其他命令
-env 或者 export # 查看当前shell环境变量； set 查看所有环境变量
-unset temp_env # 删除temp_env环境变量
-source .zshrc # 使该shell 源文件 即时生效</p>
-<p>文件查找
-whereis
-which
-locate
-find</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[linux入门之命令篇(1)]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke-linux-easy-1</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke-linux-easy-1">
-        </link>
-        <updated>2016-07-17T02:59:01.000Z</updated>
-        <content type="html"><![CDATA[<p>在linux盛行的今天，不会linux命令何以立足。那么，我们拿到一个linux服务器资源，通过哪些命令来了解该服务器的基本情况呢？</p>
-<p>硬件资源</p>
-<p>**  cpu、内存   可以访问/proc目录**<br>
-cat /proc/cpuinfo # 查看CPU信息 个数、处理器速度
-cat /proc/meminfo # 查看内存信息 内存大小
-**  磁盘、分区  **<br>
-mount | column -t # 查看挂接的分区状态　　
-fdisk -l # 查看所有分区　
-##软件资源</p>
-<p>**  操作系统**<br>
-uname -a # 查看内核/操作系统/CPU信息
-cat /etc/issue # 查看操作系统版本
-cat /proc/version # 查看操作系统版本
-hostname # 查看计算机名　　
-lsmod # 列出加载的内核模块　　
-env # 查看环境变量　
-**  系统资源  **<br>
-top # 看cpu的相关信息
-free -h # 显示内存的情况 内存和交换区使用量　　
-grep MemTotal /proc/meminfo # 查看内存总量
-grep MemFree /proc/meminfo # 查看空闲内存量　
-vmstat # CPU、内存、IO的情况，详细参数可参考Linux vmstat命令实战详解
-uptime # 开机多久 几个人用 负载（load average）是多少
-cat /proc/loadavg # 查看系统负载
-df -h # 查看各分区使用情况　　
-du -sh # 查看指定目录的大小　　
-du 默认是循环列出所有的目录和文件的大小
-du -h -d  1   /path           -d 1 和  --max-depth=1  功能一样
-du -h --max-depth= 1  /path       能够查看path下的目录大小
-du -h --max-depth= 1  /path/*    能够查看path下所有文件和目录的大小
-mount | column -t # 查看挂接的分区状态　　
-fdisk -l # 查看所有分区　
-load average 的含义：三个值分别指系统在最后 1/5/15分钟的平均负载。
-根据经验：我们应该把重点放在5/15分钟的平均负载，因为1分钟的平均负载太频繁，一瞬间的高并发就会导致该值的大幅度改变。</p>
-<p>**  网络  **  　
-ifconfig # 查看所有网络接口的属性　　
-iptables -L # 查看防火墙设置　　
-route -n # 查看路由表　　
-netstat -lntp # 查看所有监听端口　　
-netstat -antp # 查看所有已经建立的连接　　
-netstat -s # 查看网络统计信息
-**  进程  **  　　　
-ps -ef # 查看所有进程　　
-top # 实时显示进程状态
-crontab - l # 查看自动任务
-crobtab -e # 编写自动任务
-**  用户  **
-w # 查看活动用户　　
-id # 查看指定用户信息　　
-last # 查看用户登录日志　　
-cut -d : -f 1 /etc/passwd # 查看系统所有用户　　
-cut -d : -f 1 /etc/group # 查看系统所有组　　
-通过上述命令，是不是对自己的linux的情况有了大致的了解了呢？
-是的话请给个赞吧！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[GVIM的使用指南（VI命令）]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke-linux-vi</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke-linux-vi">
-        </link>
-        <updated>2016-06-30T02:57:18.000Z</updated>
-        <content type="html"><![CDATA[<p>快速定位到某行</p>
-<p>nG 将光标移动到第n行。
-G 将光标移动到最后一行。
-gg 将光标移动到第一行。
-查找</p>
-<p>命令模式：输入 /word 后回车，即查找word，按 n 查找下一个匹配单词，按 N 查找上一个匹配单词。</p>
-<p>剪切/复制、粘贴</p>
-<p>命令模式：d 剪切， y 复制，p 粘贴 。
-vl从某个字母开始进行选择。
-命令模式：dd 剪切该行，yy复制改行
-前切三行：3dd,即从当前行+下两行被剪切了。
-cc光标移动到最后一行。
-yyp 复制本行在本行下面进行粘贴
-yyP 复制本行在本行上面进行粘贴
-同理 ddp ddP 可以迅速交换两行
-替换</p>
-<p>命令模式： r 单个字母替换。
-命令模式： R 多个字母替换，这种情况用的多些，调整完毕之后。由替换模块切回到原模式。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[博客折腾记（HEXO＋Github）]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke">
-        </link>
-        <updated>2016-06-29T02:54:01.000Z</updated>
-        <content type="html"><![CDATA[<p>闲着就要折腾！</p>
-<p>因为个人在搭建的过程中遇到了一些流程上的问题诸如hexo 和 node的关系，hexo和github的关系等，所以该文主要是讲解一下搭建博客的整个流程，为后来者提供一下经验，仅供参考！</p>
-<p>首先给出自己的linux环境参数</p>
-<p>ubuntu: 14.04 ( cat /etc/issue )
-linux version: 3.13.0-generic ( cat
-/proc/version )
-linux系统位数：X86_64 ( sudo uname –m )
-hexo 版本: 3.2.0 (hexo -v)
-可以用实验楼的linux资源，个人觉得很方便</p>
-<p>大概分三步完成：</p>
-<ol>
-<li>在linux下安装hexo，通过hexo新建一个博客
-hexo是一款基于Node.js的静态博客框架，讲究的就是快准狠。所以先要安装Node.js，安装过程请参照其他的博客，安装node之后，通过其npm命令安装hexo。然后通过如下两个命令 node -v 和 hexo -v 显示相应的版本信息后，表示 node和hexo安装成功。</li>
-</ol>
-<p>shiyanlou:mysite/ $ node -v [14:49:05]
-v0.10.25
-shiyanlou:mysite/ $ hexo -v [14:57:45]
-hexo: 3.2.0
-hexo-cli: 1.0.2
-os: Linux 3.13.0-30-generic linux x64
-http_parser: 1.0
-node: 0.10.25
-v8: 3.14.5.9
-ares: 1.10.0
-uv: 0.10.23
-zlib: 1.2.8
-modules: 11
-openssl: 1.0.1f
-如果没有安装，可参看本文</p>
-<p>sudo apt-get install nodejs
-sudo apt-get install npm
-sudo npm install -g hexo
-或 sudo npm install hexo-cli -g
-安装hexo之后，就可以通过hexo的几个命令生成一个的轻博客。
-先建一个文件夹，例如 mysite（mysite 就是你的博客根目录），然后进入该目录，执行init命令hexo</p>
-<p>hexo init 初始化命令
-hexo server 启动服务命令</p>
-<p>hexo s
-INFO Hexo is running at http://localhost:4000/mysite/. Press Ctrl+C to stop.</p>
-<p>显示如上说明成功了，可以在浏览器中进行验证 http://localhost:4000/mysite</p>
-<ol start="2">
-<li>
-<p>在github中新建一个github pages的主页
-根据github pages的官方文档英文就可以一步步的建立一个空间（仓库repository），当然可会给你看这个中文的
-用GitHub Pages 快速搭建一个自己的网页
-建完之后发现，就是一个很简单的主页，github会提供一些博客模板但都不是很fashion。这就是为什么上面会先提到hexo。
-这就是你的空间地址： https://yourname.github.io 。</p>
-</li>
-<li>
-<p>在 HEXO中配置github的相关信息
-这一步的目的就是将第一步hexo生成的博客直接发布到第二部github pages空间里。以后就直接通过 markdown的文本编辑器编写博客文章，然后通过hexo发布到github里，最后就可以通过你的空间地址： https://yourname.github.io 进行访问最新的博客内容啦。</p>
-</li>
-</ol>
-<p>这里有详细的hexo中 配置文件的配置_config.yml的修改，以及hexo的发布博客的命令。</p>
-<p>hexo clean
-hexo g
-hexo d
-记录网站诞生过程-使用hexo+github pages</p>
-<p>很多文章提到配置SSH keys，其目的就是通过hexo发布到github里时，是否需要输入密码，因为你频繁发布博客的话，最好是配置相应的SSHkeys，以后就不用输入了。</p>
 ]]></content>
     </entry>
 </feed>

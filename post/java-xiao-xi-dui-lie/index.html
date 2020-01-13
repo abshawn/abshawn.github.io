@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JAVA消息队列 | My Home</title>
+<link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1578908532873">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://abshawn.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://abshawn.github.io">
+  <img class="avatar" src="https://abshawn.github.io/images/avatar.png?v=1578908532873" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://abshawn.github.io/post/log-record/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              JAVA消息队列
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-12-31 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <blockquote>
+<p>1</p>
+</blockquote>
+<p>近期公司项目中，听同事提起MQ、JMS，因为之前没有使用过不太了解，所以抽出半天时间学习下，了解下相关概念、功能及其用途。便于再次与人沟通时可以言之有物，后续工作中遇到了，可立马上手，提高工作效率。</p>
+<h3 id="学习过程分为三个步骤">学习过程分为三个步骤：###</h3>
+<ul>
+<li>1  查找资料</li>
+<li>2  实验实践</li>
+<li>3  归纳总结</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2199827-04f33bdc2f8e00d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="学习思路.jpg"></p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>###查找资料###
+推荐两篇博客，内容不错。</p>
+<ul>
+<li>1  <a href="http://www.cnblogs.com/chenpi/p/5559349.html">JMS(Java消息服务)入门教程</a>     ，比较适合了解基本知识，包括概念、分类、用途及其原理。</li>
+<li>2 <a href="http://blog.sina.com.cn/s/blog_6166d8170100h0ty.html">消息队列MQ技术的介绍和原理</a>，介绍了消息队列MQ的基本知识点。
+此处不再对技术内容进行复制粘贴，仅提供学习思路。首先用what、how、why提出自己心中感兴趣的几个问题，然后在到资料中找出想要的答案。例如：什么是Java消息服务？MQ? 为什么要有消息服务？优点是什么？消息服务是如何实现的？
+JSM <em>Java Message Service</em>， MQ <em>Message Queue</em></li>
+</ul>
+<blockquote>
+<p>3</p>
+</blockquote>
+<p>####实验####
+通过上面的快速阅读和详细阅读之后，已经在概念上了解了，下面通过一个实验对概念和原理进行深入的理解，了解其用途及其适用范围。</p>
+<ul>
+<li>1  环境介绍
+apache-tomcat-7.0.61、apache-activemq-5.6.0、eclipse neon、jdk 1.8.0 ；</li>
+<li>2 实验代码工程链接地址
+https://github.com/abshawn/JMSProject  ，可以从此处下载代码，在本地部署查看效果。</li>
+<li>3 实验效果截图
+通过activemq可以监控到消息队列的内容。
+<img src="http://upload-images.jianshu.io/upload_images/2199827-a477301f88f244c9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ActiveMQ.jpg"></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2199827-882bc8be911b30f6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="消息生产者.jpg"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2199827-e9d970824185b7c5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="消息消费者.jpg"></p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>###归纳总结###
+** JMS “ 一个中心，两种模式，三步实现”**</p>
+<ul>
+<li>1 以 消息服务器为中心
+消息生产者 通过客户端发消息给消息服务器；  消息消费者通过消息服务器接收消息；</li>
+<li>2 两种消息发送模型
+两种消息发送模型规范：点对点、发布订阅 ；</li>
+<li>3 实现方法分为三步
+3.1、 统一消息服务器，建立连接Connections ；
+3.2 、通过连接建立队列会话session；
+3.3 、准备就绪后，执行 生产者 发消息和消费者 接消息（异步）。
+ 
+**优点     ** 解耦合、异步</li>
+</ul>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://abshawn.github.io/post/npm-chang-yong-ming-ling-shi-yong-zhi-nan">
+              <h3 class="post-title">
+                npm常用命令使用指南
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://abshawn.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
