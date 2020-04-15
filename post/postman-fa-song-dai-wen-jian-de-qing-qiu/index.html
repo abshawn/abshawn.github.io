@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>构建前端脚手架（1）-实现原理 | My Home</title>
+<title>POSTMAN发送带文件的请求 | My Home</title>
 <link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1586953351546">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,19 +74,57 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              构建前端脚手架（1）-实现原理
+              POSTMAN发送带文件的请求
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-07-04 ·
+                · 2020-03-26 ·
               </time>
               
             </div>
             
+              <div class="post-feature-image" style="background-image: url('https://abshawn.github.io/post-images/postman-fa-song-dai-wen-jian-de-qing-qiu.png')">
+              </div>
+            
             <div class="post-content">
-              <!-- more -->
-<h3 id="前端脚手架是什么">前端脚手架是什么</h3>
-<h3 id="前端脚手架的">前端脚手架的</h3>
+              <p>springboot 可以实现纯后端的自动化的逻辑；
+通过postman如何对如下方法进行调用
+@RequestMapping(&quot;/upload&quot;)
+public String file(@RequestParam(&quot;file&quot;) MultipartFile file, String table, String tx_dt)</p>
+<!-- more --> 
+<blockquote>
+<p>1
+@RequestMapping(&quot;/upload&quot;)
+public String file(@RequestParam(&quot;file&quot;) MultipartFile file, String table, String tx_dt) {
+System.out.println(&quot;file&quot;);
+if (file.isEmpty()) {
+return &quot;上传失败，请选择文件&quot;;
+}</p>
+</blockquote>
+<pre><code>	String fileName = file.getOriginalFilename();
+	System.out.println(&quot;fileName:&quot; + fileName);
+	System.out.println(&quot;table:&quot; + table);
+	System.out.println(&quot;tx_dt:&quot; + tx_dt);
+	try {
+		XSSFWorkbook workbook = new XSSFWorkbook(file.getInputStream());
+		ExcelInfo  data = file2ExcelService.parseExcel(workbook);
+		file2ExcelService.saveResult(data, tx_dt, table);
+	} catch (Exception e) {
+
+		e.printStackTrace();
+		return e.getLocalizedMessage();
+	}
+	return &quot;SUCCESS&quot;;
+}
+
+&gt; 2 postman的截图
+如何传送附件
+
+![Headers](https://abshawn.github.io/post-images/1585187212793.png)
+注意：标红色的地方是需要选择 file 类型的，否则传不了文件。
+![Body](https://abshawn.github.io/post-images/1585187220114.png)
+</code></pre>
+<!-- more -->
 
             </div>
           </article>
@@ -95,9 +133,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia">
+            <a href="https://abshawn.github.io/post/java-xiao-xi-dui-lie">
               <h3 class="post-title">
-                构建前端脚手架-综述
+                JAVA消息队列
               </h3>
             </a>
           </div>

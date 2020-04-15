@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abshawn.github.io</id>
     <title>My Home</title>
-    <updated>2020-01-13T09:42:16.766Z</updated>
+    <updated>2020-04-15T12:22:41.734Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abshawn.github.io"/>
     <link rel="self" href="https://abshawn.github.io/atom.xml"/>
@@ -10,6 +10,57 @@
     <logo>https://abshawn.github.io/images/avatar.png</logo>
     <icon>https://abshawn.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, My Home</rights>
+    <entry>
+        <title type="html"><![CDATA[POSTMAN发送带文件的请求]]></title>
+        <id>https://abshawn.github.io/post/postman-fa-song-dai-wen-jian-de-qing-qiu</id>
+        <link href="https://abshawn.github.io/post/postman-fa-song-dai-wen-jian-de-qing-qiu">
+        </link>
+        <updated>2020-03-26T01:42:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>springboot 可以实现纯后端的自动化的逻辑；
+通过postman如何对如下方法进行调用
+@RequestMapping(&quot;/upload&quot;)
+public String file(@RequestParam(&quot;file&quot;) MultipartFile file, String table, String tx_dt)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>springboot 可以实现纯后端的自动化的逻辑；
+通过postman如何对如下方法进行调用
+@RequestMapping(&quot;/upload&quot;)
+public String file(@RequestParam(&quot;file&quot;) MultipartFile file, String table, String tx_dt)</p>
+<!-- more --> 
+<blockquote>
+<p>1
+@RequestMapping(&quot;/upload&quot;)
+public String file(@RequestParam(&quot;file&quot;) MultipartFile file, String table, String tx_dt) {
+System.out.println(&quot;file&quot;);
+if (file.isEmpty()) {
+return &quot;上传失败，请选择文件&quot;;
+}</p>
+</blockquote>
+<pre><code>	String fileName = file.getOriginalFilename();
+	System.out.println(&quot;fileName:&quot; + fileName);
+	System.out.println(&quot;table:&quot; + table);
+	System.out.println(&quot;tx_dt:&quot; + tx_dt);
+	try {
+		XSSFWorkbook workbook = new XSSFWorkbook(file.getInputStream());
+		ExcelInfo  data = file2ExcelService.parseExcel(workbook);
+		file2ExcelService.saveResult(data, tx_dt, table);
+	} catch (Exception e) {
+
+		e.printStackTrace();
+		return e.getLocalizedMessage();
+	}
+	return &quot;SUCCESS&quot;;
+}
+
+&gt; 2 postman的截图
+如何传送附件
+
+![Headers](https://abshawn.github.io/post-images/1585187212793.png)
+注意：标红色的地方是需要选择 file 类型的，否则传不了文件。
+![Body](https://abshawn.github.io/post-images/1585187220114.png)
+</code></pre>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JAVA消息队列]]></title>
         <id>https://abshawn.github.io/post/java-xiao-xi-dui-lie</id>
@@ -410,168 +461,6 @@ players.forEach(System.out::println);
 <p>1、hexo 之前是在github上弄的网络环境，便于随时随地撰写并通过命令行发布到github page上，但同时带来了一些额外的写作的成本。</p>
 <p>2、发现gridea后，全平台兼容，能很好的支持mac端写作，并且一次配置之后，就可以很方便的撰写并发布到github page上啦。与简书的写作方式类似，无切换成本。</p>
 <p>3、界面化的写作模式，更符合人性的特点，更容易促使日更。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[linux入门之任务计划crontab(5)]]></title>
-        <id>https://abshawn.github.io/post/hexo-on-boke-linux-easy-5</id>
-        <link href="https://abshawn.github.io/post/hexo-on-boke-linux-easy-5">
-        </link>
-        <updated>2016-07-17T03:13:17.000Z</updated>
-        <summary type="html"><![CDATA[<p>crontab介绍</p>
-<p>我们时常会有一些定期定时的任务，如周期性的清理一下／tmp，周期性的去备份一次数据库，周期性的分析日志等等。而且有时候因为某些因素的限制，执行该任务的时间会很尴尬。本文同你一起掀开Linux系统自动任务的神秘面纱。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>crontab介绍</p>
-<p>我们时常会有一些定期定时的任务，如周期性的清理一下／tmp，周期性的去备份一次数据库，周期性的分析日志等等。而且有时候因为某些因素的限制，执行该任务的时间会很尴尬。本文同你一起掀开Linux系统自动任务的神秘面纱。</p>
- <!-- more --> 
-<p>1、基本概念</p>
-<p>crontab自动任务的理解
-用于设置周期性被执行的指令
-该命令读取指令存放于crontab文件中供后续读取和执行
-crond为其守护进程，一般在后台默默运行，不间断的检查是否有预定的作业需要执行。
-crontab命令的格式和参数
-分 时 日 月 星期 &lt;命令&gt; &lt;日志&gt;
-crontab格式和参数.png
-2、环境的准备</p>
-<p>实验楼的linux系统，默认是没有启动日志和cron守护进程，需要手动启动</p>
-<p>启动日志的命令</p>
-<p>service rsyslog start （已启动的可以不起）
-1</p>
-<p>启动crontab</p>
-<p>sudo cron -f &amp;
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14</p>
-<pre><code>&gt; * 操作截图如下
-![启动日志和crontab](https://dn-simplecloud.qbox.me/1790261468638161237-wm)
-
-
-&gt; ** crontab 新增任务**
-&gt; * 使用vi编辑器进行编辑，输入i切到编辑模式
--  ```- crontab -e 
-</code></pre>
-<p><img src="https://dn-simplecloud.qbox.me/1790261468638619229-wm" alt="新增任务计划"></p>
-<blockquote>
-<ul>
-<li>查看结果</li>
-</ul>
-</blockquote>
-<ul>
-<li>没有生成文件？日志报错“no mta installed discarding output”</li>
-</ul>
-<pre><code class="language-sudo">报错日志
-
-查找原因，发现 书写格式有误 ，需在date之后加个空格。
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-*/1 * * * * touch /home/shiyanlou/$(date  +\%Y\%m\%d\%H\%M\%S) 
-</code></pre>
-<p><img src="https://dn-simplecloud.qbox.me/1790261468650326234-wm" alt="已生成20160716142101文件"></p>
-<hr>
-<h2 id="crontab使用"><strong>crontab使用</strong></h2>
-<p>一个是linux系统，是存在多个用户的，那么每个用户建立的crontab是否会有冲突呢？<strong>当然不会冲突</strong>，要是冲突，就没有安全性和可靠性而言了。那么具体是怎么做到的呢？</p>
-<h3 id="1-配置文件的独立性">1、配置文件的独立性</h3>
-<blockquote>
-<ul>
-<li>不同用户，在/var/spool/cron/crontabs里存在一个对应的配置文件</li>
-</ul>
-</blockquote>
-<ul>
-<li>保证了 隔离、独立、有效</li>
-<li>如下图，存在 root和shiyanlou 两个用户的crontab
-<img src="https://dn-simplecloud.qbox.me/1790261468650781682-wm" alt="crontab独立性"></li>
-</ul>
-<h3 id="2-守护进程cron自动执行">2、守护进程cron自动执行</h3>
-<blockquote>
-<ul>
-<li>在etc目录下存在如下cron文件，这几个文件会让你的任务计划安装计划正确执行</li>
-</ul>
-</blockquote>
-<ul>
-<li>1、 /etc/cron.daily，目录下的脚本会每天让执行一次，在每天的6点25分时运行；</li>
-<li>2、 /etc/cron.hourly，目录下的脚本会每个小时让执行一次，在每小时的17分钟时运行；</li>
-<li>3、/etc/cron.mouthly，目录下的脚本会每月让执行一次，在每月1号的6点52分时运行；</li>
-<li>4、 /etc/cron.weekly，目录下的脚本会每周让执行一次，在每周第七天的6点47分时运行；</li>
-<li>如下图所示
-<img src="https://dn-simplecloud.qbox.me/1790261468651152728-wm" alt="etc下cron文件"></li>
-</ul>
-<hr>
-<h2 id="crontab进阶"><strong>crontab进阶</strong></h2>
-<p>设定crontab之后，系统管理员最关心的是crontab任务有没有按照计划执行完毕，执行过程中有没有出错？那么我们可以通过查看日志文件来了解请情况。</p>
-<h3 id="1-crontab系统日志">1、crontab系统日志</h3>
-<blockquote>
-<ul>
-<li>默认的系统日志  存在于  /var/log/syslog 文件里</li>
-<li>自定义启用cron日志  通过编辑 /etc/rsyslog.d/50-default.conf配置文件，达到启用cron.log专用日志，详见下图
-<img src="https://dn-simplecloud.qbox.me/1790261468651337661-wm" alt="系统日志"></li>
-</ul>
-</blockquote>
-<h3 id="2-crontab执行日志">2、crontab执行日志</h3>
-<blockquote>
-<ul>
-<li>在crontab命令里，可以自定义执行日志的路径和名称【分 时 日 月 星期 &lt;执行的命令&gt; &lt;执行的日志&gt;】，如下两个实例：</li>
-</ul>
-</blockquote>
-<pre><code class="language-python">（1） * 8 * * 0  /home/shiyanlou/mybin/back.sh 1&gt;&gt;/home/shiyanlou/back.log 2&gt;&gt;/home/shiyanlou/back.log
- （2） * 8 * * 0 /home/shiyanlou/mybin/back.sh &gt;&gt;/home/shiyanlou/back.log 2&gt;&amp;1
-（1）和（2）是两种不同的写法，但是含义是一样的
-其中，“2&gt;&amp;1” 表示 2跟1使用同一个日志文件
-其中， 1 表示执行的标准日志输出 ；2表示 执行异常的日志输出
-
-作业
-
-撰写一个crontab任务计划，使其完成在“每周日的上午8点自动执行一次备份脚本 back.sh”
-
-back.sh 是对该目录/home/shiyanlou/Code下的blog目录文件进行压缩打包；
-结合上面设定的crontab自动任务，现补充 back.sh的脚本如下：</code></pre>
 ]]></content>
     </entry>
 </feed>
