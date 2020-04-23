@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之环境变量与文件查找(2) | My Home</title>
+<link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1587685394668">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://abshawn.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://abshawn.github.io">
+  <img class="avatar" src="https://abshawn.github.io/images/avatar.png?v=1587685394668" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://abshawn.github.io/post/log-record/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之环境变量与文件查找(2)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="https://abshawn.github.io/tag/huan-jing-bian-liang" class="post-tag">
+                  # 环境变量
+                </a>
+              
+                <a href="https://abshawn.github.io/tag/wen-jian-cha-zhao" class="post-tag">
+                  # 文件查找
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h2 id="环境变量">环境变量</h2>
+<blockquote></blockquote>
+<p><strong>分类</strong></p>
+<ul>
+<li>当前 Shell 进程私有用户自定义变量，如上面我们创建的 temp 变量，只在当前 Shell 中有效。</li>
+<li>Shell 本身内建的变量。</li>
+<li>从自定义变量导出的环境变量。</li>
+</ul>
+<pre><code>declare tmp;
+tmp=&quot;shiyanlou i love y&quot;;
+echo $tmp ；         **不要忘记$**
+</code></pre>
+<p><img src="https://dn-simplecloud.qbox.me/1790261468306488273-wm" alt="实验楼"></p>
+<hr>
+<!--more-->
+<h2 id="添加自定义路径到path环境变量">添加自定义路径到“PATH”环境变量</h2>
+<blockquote></blockquote>
+<p>这个功能很实用，可以将常用的命令放在  home/shiyanlou/mybin 下
+然后，将此路径添加到PATH中</p>
+<p><img src="https://dn-simplecloud.qbox.me/1790261468312951003-wm" alt="实验楼"></p>
+<p>查询当前的shell：有如下命令</p>
+<blockquote></blockquote>
+<ul>
+<li>ps</li>
+<li>echo $0</li>
+<li>echo $SHELL</li>
+<li>env | grep SHELL</li>
+</ul>
+<p><img src="https://dn-simplecloud.qbox.me/1790261468313173847-wm" alt="实验楼"></p>
+<p><strong>其他命令</strong></p>
+<blockquote></blockquote>
+<ul>
+<li>env   或者  export         # 查看当前shell环境变量； set 查看所有环境变量</li>
+<li>unset temp_env           #  删除temp_env环境变量</li>
+<li>source  .zshrc               #  使该shell 源文件 即时生效</li>
+</ul>
+<h2 id="文件查找">文件查找</h2>
+<blockquote></blockquote>
+<ul>
+<li>whereis</li>
+<li>which</li>
+<li>locate</li>
+<li>find</li>
+</ul>
+<h2 id="实验楼"><img src="https://dn-simplecloud.qbox.me/1790261468314138838-wm" alt="实验楼"></h2>
+<p>##友情提示
+我正在实验楼撸代码，你也快来！800+编程实战教程，无需搭环境，直接练习！用我的链接注册，你我都能获得3个实验豆！<a href="http://www.shiyanlou.com/register?inviter=NTY0MzE5MTkxNzAx">http://www.shiyanlou.com/register?inviter=NTY0MzE5MTkxNzAx</a></p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://abshawn.github.io/post/linux入门之命令篇-1">
+              <h3 class="post-title">
+                linux入门之命令篇(1)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://abshawn.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

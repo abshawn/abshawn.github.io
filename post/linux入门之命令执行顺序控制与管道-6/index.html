@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之命令执行顺序控制与管道(6) | My Home</title>
+<link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1587685394668">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://abshawn.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://abshawn.github.io">
+  <img class="avatar" src="https://abshawn.github.io/images/avatar.png?v=1587685394668" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://abshawn.github.io/post/log-record/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之命令执行顺序控制与管道(6)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="https://abshawn.github.io/tag/shun-xu-kong-zhi" class="post-tag">
+                  # 顺序控制
+                </a>
+              
+                <a href="https://abshawn.github.io/tag/guan-dao" class="post-tag">
+                  # 管道
+                </a>
+              
+                <a href="https://abshawn.github.io/tag/or" class="post-tag">
+                  # ｜
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h2 id="基本概念"><strong>基本概念</strong></h2>
+<p>本文旨在帮助你了解linux中顺序执行、选择执行、管道、cut命令、grep 命令、wc命令、sort命令等管道命令，进而高效率的使用 Linux 的技巧。</p>
+<h3 id="1-简单的顺序执行你可以用分号来完成">1、简单的顺序执行你可以用“；”分号来完成。</h3>
+<h3 id="2-有选择的执行命令你可以用逻辑与来完成">2、有选择的执行命令你可以用“&amp;&amp;”逻辑与来完成。</h3>
+<blockquote>
+<ul>
+<li>A &amp;&amp; B</li>
+</ul>
+</blockquote>
+<ul>
+<li>正确执行完毕A后 在执行B，</li>
+<li>A没执行，就不会执行B</li>
+</ul>
+<!--more-->
+<h3 id="3-管道是什么">3、管道是什么</h3>
+<blockquote>
+<ul>
+<li>管道是一种通信机制，通常用于进程间的通信（也可通过socket进行网络通信），它表现出来的形式就是将前面每一个进程的输出(stdout)直接作为下一个进程的输入(stdin)。</li>
+<li>管道的分类
+管道又分为匿名管道和具名管道。在命令行中由 | 分隔符表示。</li>
+</ul>
+</blockquote>
+<h2 id="管道符命令用法实例"><strong>管道符命令用法实例</strong></h2>
+<h3 id="1-cut命令打印每一行的某一字段">1、cut命令，打印每一行的某一字段</h3>
+<pre><code class="language-python">$ cut /etc/passwd -d ':' -f 1,6
+$ cut /etc/passwd -c -4
+$ cut /etc/passwd -c 2-5
+</code></pre>
+<h3 id="2-grep命令-选择字符">2、grep命令  选择字符</h3>
+<pre><code># 查看环境变量中以&quot;yanlou&quot;结尾的字符串
+$ export | grep &quot;.*yanlou$&quot;
+</code></pre>
+<p>其中$表示一行的末尾。</p>
+<h3 id="3-wc统计命令">3、wc统计命令</h3>
+<pre><code>$ ls -dl /etc/*/ | wc -l 
+</code></pre>
+<p>其中 -l 行数； -w 字数</p>
+<h3 id="4-sort排序命令">4、sort排序命令</h3>
+<pre><code># &quot;-r&quot; 表示逆序
+$ cat /etc/passswd | sort -r
+# &quot;-t&quot; 分割符 -k字段号
+$ cat /etc/passwd | sort -t':' -k 3 -n
+</code></pre>
+<hr>
+<h2 id="作业"><strong>作业</strong></h2>
+<p>使用以前介绍过的方法，安装aview和imagemagick，然后用asciiview命令显示图片，使用方法可以用 man 命令查看。
+<img src="https://dn-simplecloud.qbox.me/1790261468664327435-wm" alt="实验楼"></p>
+<h3 id="友情提示">友情提示</h3>
+<p>我正在实验楼撸代码，你也快来！800+编程实战教程，无需搭环境，直接练习！用我的链接注册，你我都能获得3个实验豆！http://www.shiyanlou.com/register?inviter=NTY0MzE5MTkxNzAx</p>
+<hr>
+<p>感谢您花费时间阅读这篇文章！！通过上述讲解是不是让您对linux的执行顺序控制与管道的情况有了进一步的了解了呢？<strong>是的话请给个赞吧！</strong></p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://abshawn.github.io/post/linux入门之任务计划crontab-5">
+              <h3 class="post-title">
+                linux入门之任务计划crontab(5)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://abshawn.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

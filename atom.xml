@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abshawn.github.io</id>
     <title>My Home</title>
-    <updated>2020-04-23T23:38:22.355Z</updated>
+    <updated>2020-04-23T23:43:21.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abshawn.github.io"/>
     <link rel="self" href="https://abshawn.github.io/atom.xml"/>
@@ -259,23 +259,19 @@ ZBMAC-C02VX3K0H:~ zhangnan12$ npm root -g
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[如何学习研究新的东西]]></title>
-        <id>https://abshawn.github.io/post/ru-he-xue-xi-yan-jiu-xin-de-dong-xi</id>
-        <link href="https://abshawn.github.io/post/ru-he-xue-xi-yan-jiu-xin-de-dong-xi">
+        <title type="html"><![CDATA[数据库链接操作]]></title>
+        <id>https://abshawn.github.io/post/shu-ju-ku-lian-jie-cao-zuo</id>
+        <link href="https://abshawn.github.io/post/shu-ju-ku-lian-jie-cao-zuo">
         </link>
-        <updated>2019-07-05T06:54:19.000Z</updated>
-        <summary type="html"><![CDATA[<p>学习之道：渐进式的学习方法，引入新领域的东西与原来的知识进行关联，进而产生创新的知识点
-学习之术：刘澜老师-去学习、成甲老师-好好学习等</p>
+        <updated>2019-07-05T02:47:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>交叉链接</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>学习之道：渐进式的学习方法，引入新领域的东西与原来的知识进行关联，进而产生创新的知识点
-学习之术：刘澜老师-去学习、成甲老师-好好学习等</p>
-<!-- more --> 
-<p>承认的带问题或项目的学习思路
-1、目标 ； 2、发散；3、聚焦；4、应用</p>
-<p><img src="http://assets.processon.com/chart_image/5d1ef778e4b0aad4c92696bd.png" alt="processon 网络思维导图"></p>
-<p>思维导图可以应用在发散过程中，自己学习过程中的问题，就是发散过度后产生聚焦忧虑症，觉得时间不够用在发散过程中浪费了很多时间。</p>
-<p>聚焦可以着重专研，实际解决1和2过程中了解到的最关键的技术，为了完成4；</p>
-<p>回顾2和3的过程，继续差缺补漏。</p>
+        <content type="html"><![CDATA[<p>交叉链接</p>
+ <!-- more --> 
+<p>数据库两个表联合查询，等同于关系代数。</p>
+<p>关系代数定义：关系代数是以关系为运算对象的一组高级运算的集合。关系代数的运算有集合运算（集合&lt;表&gt;与集合&lt;表&gt;之间的运算）和关系运算（集合&lt;表&gt;内部的运算）</p>
+<p>集合运算： 并运算：  R U S      差运算：  R - S        交运算：   R  ∩ B     笛卡儿积： R  x  S  （组合运算）
+并，交，差（是对各集合元组的重新组合；要求：参加集合操作的各结果表的列数必须相同，对应项的数据类型也必须相同）</p>
 ]]></content>
     </entry>
     <entry>
@@ -341,61 +337,69 @@ $ npx github:piuccio/cowsay hello
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[java8的写法]]></title>
-        <id>https://abshawn.github.io/post/java8</id>
-        <link href="https://abshawn.github.io/post/java8">
+        <title type="html"><![CDATA[撰写博客的日志记录]]></title>
+        <id>https://abshawn.github.io/post/log-record</id>
+        <link href="https://abshawn.github.io/post/log-record">
         </link>
         <updated>2019-06-06T08:08:13.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="java8-的写法">java8 的写法</h1>
-<h2 id="lambda表达式">lambda表达式</h2>
-<pre><code>String[] atp = {&quot;Rafael Nadal&quot;, &quot;Novak Djokovic&quot;,
-                &quot;Stanislas Wawrinka&quot;,
-                &quot;David Ferrer&quot;,&quot;Roger Federer&quot;,
-                &quot;Andy Murray&quot;,&quot;Tomas Berdych&quot;,
-                &quot;Juan Martin Del Potro&quot;};
-List&lt;String&gt; players =  Arrays.asList(atp);
+        <summary type="html"><![CDATA[<p>记录每次更新的功能和内容:</p>
+<p>提供工作效率，每周备份一次，每周发版两次。
+每周三、日：将撰写的文字，发布到github。
+每周日：8点到9点，进行备份。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>记录每次更新的功能和内容:</p>
+<p>提供工作效率，每周备份一次，每周发版两次。
+每周三、日：将撰写的文字，发布到github。
+每周日：8点到9点，进行备份。</p>
+<!-- more -->
+<pre><code>	第6次
 
-// 以前的循环方式
-for (String player : players) {
-    System.out.print(player + &quot;; &quot;);
-}
+时间：2019-06-16 10:50
+版本：v-1-1
+功能：迁移hexo博客到g'ridea
+内容：hexo文章挪到新平台后进行同步覆盖github page
+	补充：hexo在实验楼的环境已经没有了
+	
+		第5次
 
-// 使用 lambda 表达式以及函数操作(functional operation)
-//        参数 + 表达式
-players.forEach((player) -&gt; System.out.print(player + &quot;; &quot;));
-// 在 Java 8 中使用双冒号操作符(double colon operator)
-players.forEach(System.out::println);
+时间：2019-06-16 18:16
+版本：v-1-0
+功能：迁移hexo博客到g'ridea
+内容：hexo文章挪到新平台后进行同步覆盖github page
+	补充：hexo在实验楼的环境已经没有了
+
+第4次
+
+时间：2016-07-17 18:16
+版本：v-7-3
+功能：撰写分类为linux入门的6篇文字
+内容：linux入门
+补充：
+
+第3次
+
+时间：2016-07-06 14:16
+版本：v-7-2
+功能：撰写分类为python的文章，撰写about页面
+内容：
+补充：
+
+第2次
+
+时间：2016-07-05 14:16
+版本：v-7-1
+功能：添加了分类、标签、搜索功能
+内容：new post 格式的更新，补充log更新日志。
+补充：进一步完善，about 个人简介。
+
+第1次
+
+时间：2016-06-30 14:16
+版本：v-6-1
+功能：搭建了该博客平台，撰写了3篇博文
+内容：实验楼linux环境搭建，hexo的安装，github ssh验证。
+补充：
 </code></pre>
-<h2 id="循环">循环</h2>
-<pre><code>  List&lt;RapServicecatalog&gt; rapServicecatalogList = rapServicecatalogMapper.selectByExample(rapServicecatalogExample);
-        List&lt;TreeNode&gt; treeNodeList =   new ArrayList&lt;&gt; () ;
-
-        rapServicecatalogList.forEach(servicecatalog  -&gt;{
-            TreeNode temp=   new TreeNode();
-            temp.setId(servicecatalog.getId());
-            temp.setLabel(servicecatalog.getName());
-            treeNodeList.add(temp);
-        });
-</code></pre>
-<h2 id="泛型">泛型</h2>
-<p>Java泛型中的标记符含义：</p>
-<p>E - Element (在集合中使用，因为集合中存放的是元素)</p>
-<p>T - Type（Java 类）</p>
-<p>K - Key（键）</p>
-<p>V - Value（值）</p>
-<p>N - Number（数值类型）</p>
-<p>？ -  表示不确定的java类型</p>
-<p>S、U、V  - 2nd、3rd、4th types</p>
-<p>Object跟这些标记符代表的java类型有啥区别呢？</p>
-<p>Object是所有类的根类，任何类的对象都可以设置给该Object引用变量，使用的时候可能需要类型强制转换，但是用使用了泛型T、E等这些标识符后，在实际用之前类型就已经确定了，不需要再进行类型强制转换。</p>
-<h2 id="函数式编程">函数式编程</h2>
-<h2 id="serializable序列化接口">Serializable序列化接口</h2>
-<p>private static final long serialVersionUID = 1L;
-作为一个标识，让jvm来帮助对类进行序列化；</p>
-<p>序列化之后，可以进行传输和存储；
-一般 entity 实体；和 vo 前端传给后端需要序列化；</p>
-<p>技巧：可以在基础类，父类上implement serializable ；
-子类就不需要重复实现啦；</p>
 ]]></content>
     </entry>
 </feed>

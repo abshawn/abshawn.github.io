@@ -1,0 +1,153 @@
+<html>
+  <head>
+  <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>压缩 | My Home</title>
+<link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1587685394668">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://abshawn.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://abshawn.github.io">
+  <img class="avatar" src="https://abshawn.github.io/images/avatar.png?v=1587685394668" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://abshawn.github.io/post/log-record/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：#压缩
+            </h2> 
+        </div>
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://abshawn.github.io/post/linux入门之文件打包和压缩-3">
+        <h2 class="post-title">linux入门之文件打包和压缩(3)</h2>
+      </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2016-07-17 ·
+        </time>
+        
+          <a href="https://abshawn.github.io/tag/tar" class="post-tag">
+            # tar
+          </a>
+        
+          <a href="https://abshawn.github.io/tag/zip" class="post-tag">
+            # zip
+          </a>
+        
+          <a href="https://abshawn.github.io/tag/da-bao" class="post-tag">
+            # 打包
+          </a>
+        
+          <a href="https://abshawn.github.io/tag/ya-suo" class="post-tag">
+            # 压缩
+          </a>
+        
+      </div>
+      
+      <div class="post-abstract">
+        <h2 id="文件打包和压缩">文件打包和压缩</h2>
+<blockquote>
+<p>**zip **</p>
+</blockquote>
+<ul>
+<li>压缩文件    zip -r  -q  -o  文件名   路径</li>
+<li>查看文件大小   du -h -d 0</li>
+</ul>
+<pre><code>shiyanlou:Code/ $ ls                                                 [16:49:03]
+a  a.sh  a.zip  back.sh  blog
+shiyanlou:Code/ $ zip -r -q -o blog.zip  ~/Code/blog                 [16:49:04]
+shiyanlou:Code/ $ du -h -d 0 ~/Code/blog |sort                       [16:52:46]
+104M	/home/shiyanlou/Code/blog
+shiyanlou:Code/ $ du -h -d 0 ~/Code/* |sort                          [16:53:10]
+104M	/home/shiyanlou/Code/blog
+34M	/home/shiyanlou/Code/blog.zip
+4.0K	/home/shiyanlou/Code/a.sh
+4.0K	/home/shiyanlou/Code/a.zip
+4.0K	/home/shiyanlou/Code/back.sh
+8.0K	/home/shiyanlou/Code/a
+shiyanlou:Code/ $      
+</code></pre>
+
+      </di>
+    </article>
+  
+</div>
+
+        <div class="pagination-container">
+  
+  
+</div>
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://abshawn.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>

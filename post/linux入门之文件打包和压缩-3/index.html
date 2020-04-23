@@ -1,0 +1,223 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>linux入门之文件打包和压缩(3) | My Home</title>
+<link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1587685394668">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://abshawn.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://abshawn.github.io">
+  <img class="avatar" src="https://abshawn.github.io/images/avatar.png?v=1587685394668" alt="">
+  </a>
+  <h1 class="site-title">
+    My Home
+  </h1>
+  <p class="site-description">
+    记录我的技术博客之路
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://abshawn.github.io/post/log-record/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://abshawn.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              linux入门之文件打包和压缩(3)
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2016-07-17 ·
+              </time>
+              
+                <a href="https://abshawn.github.io/tag/tar" class="post-tag">
+                  # tar
+                </a>
+              
+                <a href="https://abshawn.github.io/tag/zip" class="post-tag">
+                  # zip
+                </a>
+              
+                <a href="https://abshawn.github.io/tag/da-bao" class="post-tag">
+                  # 打包
+                </a>
+              
+                <a href="https://abshawn.github.io/tag/ya-suo" class="post-tag">
+                  # 压缩
+                </a>
+              
+            </div>
+            
+            <div class="post-content">
+              <h2 id="文件打包和压缩">文件打包和压缩</h2>
+<blockquote>
+<p>**zip **</p>
+</blockquote>
+<ul>
+<li>压缩文件    zip -r  -q  -o  文件名   路径</li>
+<li>查看文件大小   du -h -d 0</li>
+</ul>
+<pre><code>shiyanlou:Code/ $ ls                                                 [16:49:03]
+a  a.sh  a.zip  back.sh  blog
+shiyanlou:Code/ $ zip -r -q -o blog.zip  ~/Code/blog                 [16:49:04]
+shiyanlou:Code/ $ du -h -d 0 ~/Code/blog |sort                       [16:52:46]
+104M	/home/shiyanlou/Code/blog
+shiyanlou:Code/ $ du -h -d 0 ~/Code/* |sort                          [16:53:10]
+104M	/home/shiyanlou/Code/blog
+34M	/home/shiyanlou/Code/blog.zip
+4.0K	/home/shiyanlou/Code/a.sh
+4.0K	/home/shiyanlou/Code/a.zip
+4.0K	/home/shiyanlou/Code/back.sh
+8.0K	/home/shiyanlou/Code/a
+shiyanlou:Code/ $      
+</code></pre>
+<!--more-->
+<blockquote>
+<p>当前路径 :  ./</p>
+</blockquote>
+<blockquote>
+<p><strong>upzip</strong></p>
+</blockquote>
+<ul>
+<li>不解压 查看文件内容</li>
+</ul>
+<pre><code>shiyanlou:Code/ $ unzip -l a.zip                                     [16:46:17]
+Archive:  a.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+       84  2016-07-05 17:02   a.sh
+---------                     -------
+       84                     1 file
+
+</code></pre>
+<ul>
+<li>解压zip文件  到当前目录</li>
+</ul>
+<pre><code> shiyanlou:Code/ $ ls                                                 [17:00:53]
+a.sh  a.zip  back.sh  blog  blog.zip
+shiyanlou:Code/ $ unzip a.zip -d  a                                  [17:00:54]
+Archive:  a.zip
+  inflating: a/a.sh 
+</code></pre>
+<blockquote>
+<p>**tar **</p>
+</blockquote>
+<ul>
+<li>man tar的给出的实例的用法</li>
+<li>tar的实例 打包 ，查看打包后的结果</li>
+<li>tar 解压缩  到创建的临时文件目录上</li>
+</ul>
+<pre><code>shiyanlou:~/ $ man tar |grep -A 7 EXAMPLES[9:51:34]
+EXAMPLES
+     Create archive.tar from files foo and bar.
+           tar -cf archive.tar foo bar
+     List all files in archive.tar verbosely.
+           tar -tvf archive.tar
+     Extract all files from archive.tar.
+           tar -xf archive.tar
+shiyanlou:~/ $ ls       [9:52:12]
+Code  Desktop  mybin  pc5s  tmp  tmp.tar  tmp.zip  ??????
+shiyanlou:~/ $ tar -zcf tmp.tar.gz ./[9:52:24]
+shiyanlou:~/ $ du -h -d 0 ./*[9:55:11]
+138M./Code
+36K./Desktop
+8.0K./mybin
+4.7M./pc5s
+7.0M./tmp
+5.4M./tmp.tar
+194M./tmp.tar.gz
+3.4M./tmp.zip
+35M./下载
+</code></pre>
+<blockquote></blockquote>
+<ul>
+<li>下面是解压的过程
+<img src="https://dn-simplecloud.qbox.me/1790261468550305355-wm" alt="实验楼"></li>
+</ul>
+<h2 id="交作业">交作业</h2>
+<p>aafire 火炉实验，多么大的火焰啊，<strong>可惜现在是夏天，烤的我好热啊！</strong>
+<img src="https://dn-simplecloud.qbox.me/1790261468550593813-wm" alt="实验楼"></p>
+<h2 id="友情提示">友情提示</h2>
+<p>我正在实验楼撸代码，你也快来！800+编程实战教程，无需搭环境，直接练习！用我的链接注册，你我都能获得3个实验豆！http://www.shiyanlou.com/register?inviter=NTY0MzE5MTkxNzAx</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://abshawn.github.io/post/linux入门之环境变量与文件查找-2">
+              <h3 class="post-title">
+                linux入门之环境变量与文件查找(2)
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://abshawn.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
