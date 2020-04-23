@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abshawn.github.io</id>
     <title>My Home</title>
-    <updated>2020-04-15T12:22:41.734Z</updated>
+    <updated>2020-04-23T23:38:22.355Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abshawn.github.io"/>
     <link rel="self" href="https://abshawn.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://abshawn.github.io/images/avatar.png</logo>
     <icon>https://abshawn.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, My Home</rights>
+    <entry>
+        <title type="html"><![CDATA[上线checklist]]></title>
+        <id>https://abshawn.github.io/post/shang-xian-checklist</id>
+        <link href="https://abshawn.github.io/post/shang-xian-checklist">
+        </link>
+        <updated>2020-04-17T09:41:53.000Z</updated>
+        <content type="html"><![CDATA[<p>1、预发环境配置文件的检查
+2、新增jsf接口的注册</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SQL索引问题]]></title>
+        <id>https://abshawn.github.io/post/sql-suo-yin-wen-ti</id>
+        <link href="https://abshawn.github.io/post/sql-suo-yin-wen-ti">
+        </link>
+        <updated>2020-04-15T12:24:43.000Z</updated>
+        <content type="html"><![CDATA[<p>今天跟老大约了见面，老大问了我一个面试题：如何建索引？
+select a from table1 where b=1 and c=2；</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[POSTMAN发送带文件的请求]]></title>
         <id>https://abshawn.github.io/post/postman-fa-song-dai-wen-jian-de-qing-qiu</id>
@@ -376,91 +396,6 @@ players.forEach(System.out::println);
 一般 entity 实体；和 vo 前端传给后端需要序列化；</p>
 <p>技巧：可以在基础类，父类上implement serializable ；
 子类就不需要重复实现啦；</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[撰写博客的日志记录]]></title>
-        <id>https://abshawn.github.io/post/log-record</id>
-        <link href="https://abshawn.github.io/post/log-record">
-        </link>
-        <updated>2019-06-06T08:08:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>记录每次更新的功能和内容:</p>
-<p>提供工作效率，每周备份一次，每周发版两次。
-每周三、日：将撰写的文字，发布到github。
-每周日：8点到9点，进行备份。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>记录每次更新的功能和内容:</p>
-<p>提供工作效率，每周备份一次，每周发版两次。
-每周三、日：将撰写的文字，发布到github。
-每周日：8点到9点，进行备份。</p>
-<!-- more -->
-<pre><code>	第6次
-
-时间：2019-06-16 10:50
-版本：v-1-1
-功能：迁移hexo博客到g'ridea
-内容：hexo文章挪到新平台后进行同步覆盖github page
-	补充：hexo在实验楼的环境已经没有了
-	
-		第5次
-
-时间：2019-06-16 18:16
-版本：v-1-0
-功能：迁移hexo博客到g'ridea
-内容：hexo文章挪到新平台后进行同步覆盖github page
-	补充：hexo在实验楼的环境已经没有了
-
-第4次
-
-时间：2016-07-17 18:16
-版本：v-7-3
-功能：撰写分类为linux入门的6篇文字
-内容：linux入门
-补充：
-
-第3次
-
-时间：2016-07-06 14:16
-版本：v-7-2
-功能：撰写分类为python的文章，撰写about页面
-内容：
-补充：
-
-第2次
-
-时间：2016-07-05 14:16
-版本：v-7-1
-功能：添加了分类、标签、搜索功能
-内容：new post 格式的更新，补充log更新日志。
-补充：进一步完善，about 个人简介。
-
-第1次
-
-时间：2016-06-30 14:16
-版本：v-6-1
-功能：搭建了该博客平台，撰写了3篇博文
-内容：实验楼linux环境搭建，hexo的安装，github ssh验证。
-补充：
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[博客从hexo切换到gridea]]></title>
-        <id>https://abshawn.github.io/post/change-boke</id>
-        <link href="https://abshawn.github.io/post/change-boke">
-        </link>
-        <updated>2019-06-06T07:46:22.000Z</updated>
-        <summary type="html"><![CDATA[<p>博客从hexo切换到gridea，更容易编写。
-👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。很适合用来记录我的技术成长之路。目前我也是用本地的markdown来管理自己的技术文档的。切换无成本。一次配置，一键发布共享。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>博客从hexo切换到gridea，更容易编写。
-👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。很适合用来记录我的技术成长之路。目前我也是用本地的markdown来管理自己的技术文档的。切换无成本。一次配置，一键发布共享。</p>
-<!-- more -->
-<p>1、hexo 之前是在github上弄的网络环境，便于随时随地撰写并通过命令行发布到github page上，但同时带来了一些额外的写作的成本。</p>
-<p>2、发现gridea后，全平台兼容，能很好的支持mac端写作，并且一次配置之后，就可以很方便的撰写并发布到github page上啦。与简书的写作方式类似，无切换成本。</p>
-<p>3、界面化的写作模式，更符合人性的特点，更容易促使日更。</p>
 ]]></content>
     </entry>
 </feed>

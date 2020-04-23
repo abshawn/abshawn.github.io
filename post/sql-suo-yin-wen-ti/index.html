@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>构建前端脚手架（2）-前端知识点 | My Home</title>
+<title>SQL索引问题 | My Home</title>
 <link rel="shortcut icon" href="https://abshawn.github.io/favicon.ico?v=1587685097217">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -74,37 +74,18 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              构建前端脚手架（2）-前端知识点
+              SQL索引问题
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-07-04 ·
+                · 2020-04-15 ·
               </time>
               
             </div>
             
             <div class="post-content">
-              <p>node，npm，npx</p>
-<!-- more -->
-<p>（1）NPM（node package manager）是 node.js 的包管理和分发工具。它类似于PHP的Composer，Ruby的gem，Python的pip，Java的Maven……它可以让 javascript 开发者能够更加轻松的共享代码和共用代码片段，并且通过 npm 管理你分享的代码也很方便快捷和简单 。
-npm 随node一并安装，但不是最新版，可以使用如下命令进行更新。
-npm install npm@latest -g
-查看配置信息
-npm config list -l<br>
-查看 npm 命令列表
-$ npm help
-$ npm install -h</p>
-<p>（2）NPX 。
-npx 想要解决的主要问题，就是调用项目内部安装的模块。
-npx避免全局安装模块
-$ npx create-react-app my-react-app    npx 将create-react-app下载到一个临时目录，使用以后再删除。所以，以后再次执行上面的命令，会重新下载create-react-app。</p>
-<p>npx执行 GitHub 源码
-npx 还可以执行 GitHub 上面的模块源码。</p>
-<p>执行 Gist 代码
-$ npx https://gist.github.com/zkat/4bc19503fe9e9309e2bfaa2c58074d32
-执行仓库代码
-$ npx github:piuccio/cowsay hello
-注意，远程代码必须是一个模块，即必须包含package.json和入口脚本。</p>
+              <p>今天跟老大约了见面，老大问了我一个面试题：如何建索引？
+select a from table1 where b=1 and c=2；</p>
 
             </div>
           </article>
@@ -113,9 +94,9 @@ $ npx github:piuccio/cowsay hello
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://abshawn.github.io/post/gou-jian-qian-duan-jiao-shou-jia-1-shi-xian-yuan-li">
+            <a href="https://abshawn.github.io/post/postman-fa-song-dai-wen-jian-de-qing-qiu">
               <h3 class="post-title">
-                构建前端脚手架（1）-实现原理
+                POSTMAN发送带文件的请求
               </h3>
             </a>
           </div>
